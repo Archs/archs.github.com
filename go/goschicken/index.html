@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Embed ChickenScheme In Go</title>
+  
+    <meta name="author" content="Sun">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/twitter/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+ 
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">慎独</a>
+          <ul class="nav">
+            
+              
+
+
+  <li><a href="/archive">Archive</a></li>
+
+
+            
+              
+
+
+  <li><a href="/tags">Tags</a></li>
+
+
+            
+              
+
+
+  <li><a href="/categories">Categories</a></li>
+
+
+            
+              
+
+
+  <li><a href="/pages">Pages</a></li>
+
+
+            
+              
+
+
+  <li><a href="/about">About Me</a></li>
+
+
+            
+            <li><a href="/rss.xml">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>Embed ChickenScheme In Go </h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>使用cgo加载c库的主要麻烦在于cgo不识别c头文件中的宏
+而chicken scheme初始化的时候要调用一个全局函数CHICKEN_default_toplevel。
+在cgo中使用 <code>void* dfp = CHICKEN_default_toplevel;</code> 可以直接声明。</p>
+
+<pre><code>package main
+
+/*
+#cgo windows CFLAGS: -D_GUN_SOURCE -I&quot;c:/my-chicken/include/chicken&quot; -DHAVE_CHICKEN_CONFIG_H -DC_ENABLE_PTABLES
+#cgo windows LDFLAGS: -L&quot;c:/my-chicken/lib&quot; -lchicken -lm
+
+#include &lt;chicken.h&gt;
+
+void* dfp = CHICKEN_default_toplevel;
+*/
+import &quot;C&quot;
+import (
+    &quot;unsafe&quot;
+)
+
+func main() {
+    src := &quot;(+ 1 2 3)&quot;
+    nSrc := 10
+    ret := make([]byte, nSrc)
+    p := (*C.char)(unsafe.Pointer(&amp;ret[0]))
+    C.CHICKEN_run(C.dfp)
+    C.CHICKEN_eval_string_to_string(C.CString(src), p, C.int(nSrc))
+    println(string(ret))
+}
+</code></pre>
+
+<p>最近才发现，cgo不仅可以识别注释中的c语句，对于相同目录下面的*.c文件也可
+自动编译，呵呵，像sqlite之类的库就可以静态的形式直接使用了。</p>
+
+    <hr>
+    <div class="pagination">
+      <ul>
+        <ul>
+          
+            <li class="prev"><a href="/python/hg4git/" title="使用hg访问git仓库">&larr; Previous</a></li>
+          
+          
+
+            <li><a href="/archive">Archive</a></li>
+
+          
+            <li class="next"><a href="/utils/aboutMarkDown/" title="使用Markdown">Next &rarr;</a></li>
+          
+          
+        </ul>
+      </ul>
+    </div>
+    <hr>
+    
+<div id="disqus_thread"></div>
+<script>
+    var disqus_developer = 1;
+    var disqus_shortname = 'archs'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>2013-04-10</span></div>
+    <br>
+    <h4>Categories</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/categories/#go-ref">go <span>1</span></a>
+</li>
+    
+    </ul>
+    <br>
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/tags/#scheme-ref">scheme <span>1</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#Chicken-ref">Chicken <span>1</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#cgo-ref">cgo <span>1</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#go-ref">go <span>1</span></a>
+</li>
+    
+    </ul>
+    <h4>Links</h4>
+    <ul>
+      <a href="http://my.dot.tk/cgi-bin/amb/landing.dottk?nr=660743::12422624::1::16" target="_new"> <img src="http://images.dot.tk/content/images/1402.jpg" border="0" /></a>
+    </ul>
+  </div>
+</div>
+
+      </div>
+
+      <footer>
+        <p>&copy; Sun 2013 
+          with help from <a href="http://github.com/wendal/gor" target="_blank" title="Gor -- Fast Blog">Gor</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+		  and Idea from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a> 
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint ";
+  }
+  prettyPrint();
+</script>
+
+    
+<script>
+    var _gaq=[['_setAccount','UA-40026428-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+  </body>
+</html>
