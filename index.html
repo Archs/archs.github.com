@@ -93,6 +93,34 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/程序设计/dsl/">DSL的模式和方法</a> <span class="date">2013-05-29</span></h3>
+
+  <p>最近研究Lisp，对Domain Specific Language很是产生了一些兴趣。</p>
+
+<p>James Gosling曾经说过： <code>每个配置文件最终都会变成一门编程语言。</code> 这大概是
+DSL之所以兴起和引人关注的一点吧。另外Martin Fowler在[《领域特定语言》][]中
+强调了与领域专家的沟通作为DSL的一个主要优点和设计出发点。</p>
+
+<p>广义的说HTML之于服务后端的业务逻辑实现和。net中XAML对于C#的代码来说都是
+一种具体的DSL，所以说DSL促成了或者达到了UI和业务分离也不为过，这实际上
+可以认为是领域专家（UI设计师）沟通的延伸，但是达成的效果是实实在在的。
+上面举到的两个例子跟XML的关系是非同一般的紧密，同时也说了XML作为DSL载体
+的优势。</p>
+
+<h1>内部和外部DSL</h1>
+
+<p>大体上讲DSL可以分为两种。Martin Fowler说的第三种语言工作台我不是很理解。
+内部DSL与宿主语言结合紧密，实际上可以认为是宿主语言的特殊形式，这一点可
+能与XML的例子大相径庭，也是我刚接触LISP的时候最困惑的一点：宿主语言自身
+也可以有DSL吗？</p>
+
+
+  <div class="more">
+    <a href="/程序设计/dsl/" class="btn">read more..</a>
+  </div>
+</div>
+
+<div class="post">
   <h3 class="title"><a href="/TinyCore/fullpowerTinyCore/">在TinyCore中取代BusyBox</a> <span class="date">2013-04-18</span></h3>
 
   <p>TinyCore为了最小化体积，使用BusyBox构建基本的Shell环境，所以不是
