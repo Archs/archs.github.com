@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>慎独</title>
     <link>http://www.archs.tk</link>
-    <pubDate>2013-05-29 07:27:56 +0800</pubDate>
+    <pubDate>2013-07-05 11:32:38 +0800</pubDate>
+    <item>
+      <title>使用Mingw Build Lua 的注意事项</title>
+      <link>http://www.archs.tk/tips/mingw.build.lua/</link>
+      <pubDate>2013-07-05 12:00:00 +0800</pubDate>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;&lt;p&gt;Lua的扩展库使用LUA_LIB宏定义&lt;/p&gt;&#xA;&#xA;&lt;p&gt;在c文件中引入lua的头文件之前加入：&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;#define LUA_LIB&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;使用windows库的时候，需要在gcc命令行中引入库的顺序&lt;/p&gt;&#xA;&#xA;&lt;p&gt;这样&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;gcc -lwsock32 ws_c_file.c&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;可能会造成winsock函数未定义应用的问题，最好使用&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;gcc ws_c_file.c -lwsock32 &#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;这个问题相当诡异，简直不知道怎么说是好。&lt;/p&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;</description>
+    </item>
     <item>
       <title>DSL的模式和方法</title>
       <link>http://www.archs.tk/ProgramDesign/dsl/</link>
@@ -11,13 +17,13 @@
     </item>
     <item>
       <title>在TinyCore中取代BusyBox</title>
-      <link>http://www.archs.tk/TinyCore/fullpowerTinyCore/</link>
+      <link>http://www.archs.tk/tips/fullpowerTinyCore/</link>
       <pubDate>2013-04-18 12:00:00 +0800</pubDate>
       <description>&lt;p&gt;TinyCore为了最小化体积，使用BusyBox构建基本的Shell环境，所以不是&#xA;完全的 &lt;code&gt;GNU compatible&lt;/code&gt; ，在编译软件的时候可能造成一定的困扰。如果&#xA;在TinyCore下面编译软件遇到问题，可注意下兼容性问题。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;使用&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;tce-load -wo coreutils util-linux&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;以OnDemand的方式安装 &lt;code&gt;coreutils&lt;/code&gt; 和 &lt;code&gt;util-linux&lt;/code&gt; ，下载必须软件包。&#xA;使用的时候&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;tce-load -i coreutils util-linux&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;即可。参见&lt;a href=&#34;http://tinycorelinux.net/faq.html#compatibility&#34;&gt;TinyCore Wiki&lt;/a&gt;&lt;/p&gt;&#xA;</description>
     </item>
     <item>
       <title>使用hg访问git仓库</title>
-      <link>http://www.archs.tk/python/hg4git/</link>
+      <link>http://www.archs.tk/tips/hg4git/</link>
       <pubDate>2013-04-11 12:00:00 +0800</pubDate>
       <description>&lt;p&gt;hg用久了，觉得git命令很别扭，高级功能很少用到，速度差别基本上&#xA;感觉不出来，哈，所以还是hg喽. 唯一的问题就在于Github，它不支持hg。&#xA;好在hg有一个hggit的扩展，有一次感叹一下python的“batter included”！&lt;/p&gt;&#xA;&#xA;&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;安装前准备&#34; href=&#34;#安装前准备&#34;&gt;&lt;/a&gt;安装前准备&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;Linux下面自然不用多说，Windows下面要注意几个问题&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;删除Mercurial提供的exe或者mis安装过的独立版本&lt;/li&gt;&#xA;&lt;li&gt;安装有Mingw，当然你用msvc的话下面的就可以省略了，&#xA;不过我还没有尝试过&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;设置Python Disutils的默认编译器为Gcc&#xA;进入 &lt;code&gt;PYTHON_HOME/Lib/distutils&lt;/code&gt; 建立新文件 &lt;code&gt;distutils.cfg&lt;/code&gt; 。&#xA;输入以下内容：&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;[build]&#xA;compiler=mingw32&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;安装&#34; href=&#34;#安装&#34;&gt;&lt;/a&gt;安装&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;安装就简单了，使用 &lt;code&gt;easy_install&lt;/code&gt; 或者 &lt;code&gt;pip&lt;/code&gt; 直接&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;pip install mercurial&#xA;pip install hg-git&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;然后配置hg加载hggit扩展，在用户目录下的 &lt;code&gt;.hgrc&lt;/code&gt; 文件中加入&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;[extensions]&#xA;bookmarks =&#xA;hggit =&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;然后输入 &lt;code&gt;hg help&lt;/code&gt; 就能看看到hggit已加载的输出&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;enabled extensions:&#xA;&#xA;hggit         push and pull from a Git server&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;使用&#34; href=&#34;#使用&#34;&gt;&lt;/a&gt;使用&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;使用的时候就是普遍的hg的命令了，这是相当happy的。&#xA;要注意的是git路径到hggit的转换，比如github中ssh方式访问&#xA;&lt;code&gt;git@github.com:username/reposname.git&lt;/code&gt; 要换成&#xA;&lt;code&gt;git+ssh://git@github.com:username/reposname.git&lt;/code&gt; 就可以了&lt;/p&gt;&#xA;&#xA;&lt;p&gt;还有一个推送已有hg库到git库的方法：&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;$ cd hg-git # (a Mercurial repository)&#xA;$ hg bookmark -r default master # make a bookmark of master for default, so a ref gets created&#xA;$ hg push git+ssh://git@github.com/schacon/hg-git.git&#xA;$ hg push&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;h1&gt;&lt;a style=&#34;display: block;&#34; name=&#34;enjoy-you-git-now!&#34; href=&#34;#enjoy-you-git-now!&#34;&gt;&lt;/a&gt;Enjoy you Git Now!&lt;/h1&gt;&#xA;</description>
     </item>

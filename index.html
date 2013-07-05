@@ -93,6 +93,38 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/tips/mingw.build.lua/">使用Mingw Build Lua 的注意事项</a> <span class="date">2013-07-05</span></h3>
+
+  <ol>
+<li><p>Lua的扩展库使用LUA_LIB宏定义</p>
+
+<p>在c文件中引入lua的头文件之前加入：</p>
+
+<pre><code>#define LUA_LIB
+</code></pre></li>
+
+<li><p>使用windows库的时候，需要在gcc命令行中引入库的顺序</p>
+
+<p>这样</p>
+
+<pre><code>gcc -lwsock32 ws_c_file.c
+</code></pre>
+
+<p>可能会造成winsock函数未定义应用的问题，最好使用</p>
+
+<pre><code>gcc ws_c_file.c -lwsock32 
+</code></pre>
+
+<p>这个问题相当诡异，简直不知道怎么说是好。</p></li>
+</ol>
+
+
+  <div class="more">
+    <a href="/tips/mingw.build.lua/" class="btn">read more..</a>
+  </div>
+</div>
+
+<div class="post">
   <h3 class="title"><a href="/ProgramDesign/dsl/">DSL的模式和方法</a> <span class="date">2013-05-29</span></h3>
 
   <p>最近研究Lisp，对Domain Specific Language很是产生了一些兴趣。</p>
@@ -121,7 +153,7 @@ DSL之所以兴起和引人关注的一点吧。另外Martin Fowler在[《领域
 </div>
 
 <div class="post">
-  <h3 class="title"><a href="/TinyCore/fullpowerTinyCore/">在TinyCore中取代BusyBox</a> <span class="date">2013-04-18</span></h3>
+  <h3 class="title"><a href="/tips/fullpowerTinyCore/">在TinyCore中取代BusyBox</a> <span class="date">2013-04-18</span></h3>
 
   <p>TinyCore为了最小化体积，使用BusyBox构建基本的Shell环境，所以不是
 完全的 <code>GNU compatible</code> ，在编译软件的时候可能造成一定的困扰。如果
@@ -142,12 +174,12 @@ DSL之所以兴起和引人关注的一点吧。另外Martin Fowler在[《领域
 
 
   <div class="more">
-    <a href="/TinyCore/fullpowerTinyCore/" class="btn">read more..</a>
+    <a href="/tips/fullpowerTinyCore/" class="btn">read more..</a>
   </div>
 </div>
 
 <div class="post">
-  <h3 class="title"><a href="/python/hg4git/">使用hg访问git仓库</a> <span class="date">2013-04-11</span></h3>
+  <h3 class="title"><a href="/tips/hg4git/">使用hg访问git仓库</a> <span class="date">2013-04-11</span></h3>
 
   <p>hg用久了，觉得git命令很别扭，高级功能很少用到，速度差别基本上
 感觉不出来，哈，所以还是hg喽. 唯一的问题就在于Github，它不支持hg。
@@ -175,7 +207,7 @@ compiler=mingw32
 
 
   <div class="more">
-    <a href="/python/hg4git/" class="btn">read more..</a>
+    <a href="/tips/hg4git/" class="btn">read more..</a>
   </div>
 </div>
 
