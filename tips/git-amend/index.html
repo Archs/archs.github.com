@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>使用Mingw Build Lua 的注意事项</title>
+    <title>GIT的奇技淫巧--修改历史</title>
   
     <meta name="author" content="Sun">
 
@@ -79,33 +79,24 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>使用Mingw Build Lua 的注意事项 </h1>
+  <h1>GIT的奇技淫巧--修改历史 </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <ol>
-<li><p>Lua的扩展库使用LUA_LIB宏定义</p>
+    <p>使用版本控制系统这么久，被GIT震惊了， 简直是无所不能啊，下面就是
+一个修改历史版本中所有用户信息的命令，叹为观止。</p>
 
-<p>在c文件中引入lua的头文件之前加入：</p>
-
-<pre><code>#define LUA_LIB
-</code></pre></li>
-
-<li><p>使用windows库的时候，需要在gcc命令行中引入库的顺序</p>
-
-<p>这样</p>
-
-<pre><code>gcc -lwsock32 ws_c_file.c
+<pre><code>git filter-branch --commit-filter '
+       if [ &quot;$GIT_AUTHOR_EMAIL&quot; = &quot;previous@email.address&quot; ];
+       then
+               GIT_AUTHOR_NAME=&quot;NowName&quot;;
+               GIT_AUTHOR_EMAIL=&quot;now@email.address&quot;;
+               git commit-tree &quot;$@&quot;;
+       else
+               git commit-tree &quot;$@&quot;;
+       fi' HEAD
 </code></pre>
-
-<p>可能会造成winsock函数未定义应用的问题，最好使用</p>
-
-<pre><code>gcc ws_c_file.c -lwsock32 
-</code></pre>
-
-<p>这个问题相当诡异，简直不知道怎么说是好。</p></li>
-</ol>
 
     <hr>
     <div class="pagination">
@@ -119,7 +110,7 @@
             <li><a href="/archive">Archive</a></li>
 
           
-            <li class="next"><a href="/ProgramDesign/dsl/" title="DSL的模式和方法">Next &rarr;</a></li>
+            <li class="next"><a href="/tips/mingw.build.lua/" title="使用Mingw Build Lua 的注意事项">Next &rarr;</a></li>
           
           
         </ul>
@@ -145,19 +136,23 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2013-07-05</span></div>
+    <div class="date"><span>2013-07-13</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
     
       <li>
-  <a href="/categories/#default-ref">default <span>1</span></a>
+  <a href="/categories/#tips-ref">tips <span>4</span></a>
 </li>
     
     </ul>
     <br>
     <h4>Tags</h4>
     <ul class="tag_box">
+    
+      <li>
+  <a href="/tags/#git-ref">git <span>2</span></a>
+</li>
     
     </ul>
     <h4>Links</h4>

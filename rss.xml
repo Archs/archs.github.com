@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>慎独</title>
     <link>http://www.archs.tk</link>
-    <pubDate>2013-07-05 11:32:38 +0800</pubDate>
+    <pubDate>2013-07-13 02:53:57 +0800</pubDate>
+    <item>
+      <title>GIT的奇技淫巧--修改历史</title>
+      <link>http://www.archs.tk/tips/git-amend/</link>
+      <pubDate>2013-07-13 12:00:00 +0800</pubDate>
+      <description>&lt;p&gt;使用版本控制系统这么久，被GIT震惊了， 简直是无所不能啊，下面就是&#xA;一个修改历史版本中所有用户信息的命令，叹为观止。&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;git filter-branch --commit-filter &#39;&#xA;       if [ &amp;quot;$GIT_AUTHOR_EMAIL&amp;quot; = &amp;quot;previous@email.address&amp;quot; ];&#xA;       then&#xA;               GIT_AUTHOR_NAME=&amp;quot;NowName&amp;quot;;&#xA;               GIT_AUTHOR_EMAIL=&amp;quot;now@email.address&amp;quot;;&#xA;               git commit-tree &amp;quot;$@&amp;quot;;&#xA;       else&#xA;               git commit-tree &amp;quot;$@&amp;quot;;&#xA;       fi&#39; HEAD&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;</description>
+    </item>
     <item>
       <title>使用Mingw Build Lua 的注意事项</title>
       <link>http://www.archs.tk/tips/mingw.build.lua/</link>
