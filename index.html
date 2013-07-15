@@ -93,6 +93,39 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/utils/lua.graph/">Lua画图软件</a> <span class="date">2013-07-15</span></h3>
+
+  <p>在网上看到一篇文章 <a href="http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html">用Lua画二元方程</a>，很有意思。</p>
+
+<p>作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。</p>
+
+<p>这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序。</p>
+
+<pre><code>setmetatable(_G, { __index = math })
+e = exp(1)
+
+cfg=[[
+Config={Width=400, Height=400, Xmin=-100, Xmax=100, Ymin=-100, Ymax=100, Split = 4, Expr=&quot;abs(x - y) % 20 &lt; 0.0001&quot;}
+
+function between(x, minValue, maxValue)
+  return x &gt;= minValue and x &lt;= maxValue
+end
+
+function belongto(x, ranges)
+ for _,range in ipairs(ranges) do
+      if between(x, range[1], range[2]) then return true end
+ end
+ return false
+end
+</code></pre>
+
+
+  <div class="more">
+    <a href="/utils/lua.graph/" class="btn">read more..</a>
+  </div>
+</div>
+
+<div class="post">
   <h3 class="title"><a href="/tips/git-amend/">GIT的奇技淫巧--修改历史</a> <span class="date">2013-07-13</span></h3>
 
   <p>使用版本控制系统这么久，被GIT震惊了， 简直是无所不能啊，下面就是

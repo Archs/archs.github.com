@@ -4,6 +4,11 @@
 		<loc>http://www.archs.tk/</loc>
 	</url>
 	<url>
+		<loc>http://www.archs.tk/utils/lua.graph/</loc>
+		<lastmod>2013-07-15</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
 		<loc>http://www.archs.tk/tips/git-amend/</loc>
 		<lastmod>2013-07-13</lastmod>
 		<changefreq>weekly</changefreq>
