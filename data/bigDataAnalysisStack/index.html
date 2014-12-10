@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>大数据分析软件栈</title>
+  
+    <meta name="author" content="Sun">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/twitter/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+ 
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">慎独</a>
+          <ul class="nav">
+            
+              
+
+
+  <li><a href="/archive">Archive</a></li>
+
+
+            
+              
+
+
+  <li><a href="/tags">Tags</a></li>
+
+
+            
+              
+
+
+  <li><a href="/categories">Categories</a></li>
+
+
+            
+              
+
+
+  <li><a href="/pages">Pages</a></li>
+
+
+            
+              
+
+
+  <li><a href="/about">About Me</a></li>
+
+
+            
+            <li><a href="/rss.xml">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>大数据分析软件栈 </h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <h1><a style="display: block;" name="出发" href="#出发"></a>出发</h1>
+
+<p>大数据，重点在规模，像MapReduce一出世强调的就运行在分布式数据集群上。
+这个应该是大数据的本质所在。</p>
+
+<p>大数据分析，其对象是大数据，其运行环境也自然与分布式集群分不开。
+分布式集群有数据集群（HDFS）也有运算集群（Storm），大数据自身的特点
+确定了它的数据分布性质，在分布式数据的基础上做计算也是现在的炙手可热
+的MapReduce、Spark的基础。</p>
+
+<h1><a style="display: block;" name="软件栈" href="#软件栈"></a>软件栈</h1>
+
+<h2><a style="display: block;" name="集群管理" href="#集群管理"></a>集群管理</h2>
+
+<p>在Hadoop之初是没有集群管理软件的，从Hadoop搭建的过程需要手动设置
+各台服务的配置项可见一斑。</p>
+
+<h3>Zookeeper</h3>
+
+<h3>etcd</h3>
+
+<h3>一致性协调算法</h3>
+
+<p>Paxos
+Raft</p>
+
+<h2><a style="display: block;" name="分布式文件系统" href="#分布式文件系统"></a>分布式文件系统</h2>
+
+<p>分布式文件系统是分布式并行算法的基础，没有数据并行，计算的并行对
+大数据来讲就没有根基。</p>
+
+<h2><a style="display: block;" name="资源和任务管理（分布式计算）" href="#资源和任务管理（分布式计算）"></a>资源和任务管理（分布式计算）</h2>
+
+<p>借助数据的并行化，以计算发送替代数据发送，是现在MapReduce模式的技术。
+这就有计算任务的分发、资源的神情，任务的监控等需求。</p>
+
+<h3>Hadoop</h3>
+
+<h3>Yarn</h3>
+
+<h2><a style="display: block;" name="计算框架" href="#计算框架"></a>计算框架</h2>
+
+<p>在分布式任务和资源管理的基础上，实现了一套容易上手分布式计算技术框架。
+特别是在Spark这样的框架中，用户基本上只需要在串行模式下实现计算逻辑，
+其他的资源神情、分配，任务分发、调度等都用框架自身完成。</p>
+
+<h3>MapReduce</h3>
+
+<h3>Spark</h3>
+
+<h3>Storm</h3>
+
+<h2><a style="display: block;" name="框架之上" href="#框架之上"></a>框架之上</h2>
+
+<h3>Hive</h3>
+
+<h3>HBase</h3>
+
+<h3>Spark Streaming</h3>
+
+<h3>Shark (Hive on Spark)</h3>
+
+<h2><a style="display: block;" name="大数据分析堆栈" href="#大数据分析堆栈"></a>大数据分析堆栈</h2>
+
+<h3>批处理</h3>
+
+<h3>即时查询</h3>
+
+<h3>流式实时分析（Streaming）</h3>
+
+    <hr>
+    <div class="pagination">
+      <ul>
+        <ul>
+          
+          
+            <li class="prev disabled"><a>&larr; Previous</a></li>
+          
+
+            <li><a href="/archive">Archive</a></li>
+
+          
+            <li class="next"><a href="/utils/lua.graph/" title="Lua画图软件">Next &rarr;</a></li>
+          
+          
+        </ul>
+      </ul>
+    </div>
+    <hr>
+    
+<div id="disqus_thread"></div>
+<script>
+    var disqus_developer = 1;
+    var disqus_shortname = 'archs'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>2014-12-10</span></div>
+    <br>
+    <h4>Categories</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/categories/#data-ref">data <span>1</span></a>
+</li>
+    
+    </ul>
+    <br>
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/tags/#bigdata%2C-data%2C-stack-ref">bigdata, data, stack <span>1</span></a>
+</li>
+    
+    </ul>
+    <h4>Links</h4>
+    <ul>
+      <a href="http://my.dot.tk/cgi-bin/amb/landing.dottk?nr=660743::12422624::1::16" target="_new"> <img src="http://images.dot.tk/content/images/1402.jpg" border="0" /></a>
+    </ul>
+  </div>
+</div>
+
+      </div>
+
+      <footer>
+        <p>&copy; Sun 2013 
+          with help from <a href="http://github.com/wendal/gor" target="_blank" title="Gor -- Fast Blog">Gor</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+		  and Idea from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a> 
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+<script src="//cdnjscn.b0.upaiyun.com/libs/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint ";
+  }
+  prettyPrint();
+</script>
+
+    
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-40026428-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </body>
+</html>
