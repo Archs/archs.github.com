@@ -88,7 +88,7 @@
 
 <p>作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。</p>
 
-<p>这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序。
+<p>这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序:
 <a href="/assets/media/graph.exe">下载链接</a></p>
 
 <pre><code>setmetatable(_G, { __index = math })
@@ -353,8 +353,8 @@ iup.MainLoop()
       <ul>
         <ul>
           
+            <li class="prev"><a href="/data/bigDataAnalysisStack/" title="大数据分析软件栈">&larr; Previous</a></li>
           
-            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <li><a href="/archive">Archive</a></li>
@@ -433,7 +433,7 @@ iup.MainLoop()
     </div> <!-- /container -->
 
     
-<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script src="//cdnjscn.b0.upaiyun.com/libs/prettify/r298/prettify.min.js"></script>
 <script>
   var pres = document.getElementsByTagName("pre");
   for (var i=0; i < pres.length; ++i) {
@@ -443,11 +443,20 @@ iup.MainLoop()
 </script>
 
     
-<script>
-    var _gaq=[['_setAccount','UA-40026428-1'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-40026428-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
   </body>
 </html>

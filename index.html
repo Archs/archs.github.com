@@ -93,13 +93,43 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/data/bigDataAnalysisStack/">大数据分析软件栈</a> <span class="date">2014-12-10</span></h3>
+
+  <h1><a style="display: block;" name="出发" href="#出发"></a>出发</h1>
+
+<p>大数据，重点在规模，像MapReduce一出世强调的就运行在分布式数据集群上。
+这个应该是大数据的本质所在。</p>
+
+<p>大数据分析，其对象是大数据，其运行环境也自然与分布式集群分不开。
+分布式集群有数据集群（HDFS）也有运算集群（Storm），大数据自身的特点
+确定了它的数据分布性质，在分布式数据的基础上做计算也是现在的炙手可热
+的MapReduce、Spark的基础。</p>
+
+<h1><a style="display: block;" name="软件栈" href="#软件栈"></a>软件栈</h1>
+
+<h2><a style="display: block;" name="集群管理" href="#集群管理"></a>集群管理</h2>
+
+<p>在Hadoop之初是没有集群管理软件的，从Hadoop搭建的过程需要手动设置
+各台服务的配置项可见一斑。</p>
+
+<h3>Zookeeper</h3>
+
+<h3>etcd</h3>
+
+
+  <div class="more">
+    <a href="/data/bigDataAnalysisStack/" class="btn">read more..</a>
+  </div>
+</div>
+
+<div class="post">
   <h3 class="title"><a href="/utils/lua.graph/">Lua画图软件</a> <span class="date">2013-07-15</span></h3>
 
   <p>在网上看到一篇文章 <a href="http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html">用Lua画二元方程</a>，很有意思。</p>
 
 <p>作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。</p>
 
-<p>这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序。
+<p>这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序:
 <a href="/assets/media/graph.exe">下载链接</a></p>
 
 <pre><code>setmetatable(_G, { __index = math })
@@ -344,7 +374,7 @@ docutils是一个伟大的工具，但是有些 <em>繁琐</em> 。细节的使�
     </div> <!-- /container -->
 
     
-<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script src="//cdnjscn.b0.upaiyun.com/libs/prettify/r298/prettify.min.js"></script>
 <script>
   var pres = document.getElementsByTagName("pre");
   for (var i=0; i < pres.length; ++i) {
@@ -354,11 +384,20 @@ docutils是一个伟大的工具，但是有些 <em>繁琐</em> 。细节的使�
 </script>
 
     
-<script>
-    var _gaq=[['_setAccount','UA-40026428-1'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-40026428-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
   </body>
 </html>
