@@ -2,13 +2,7 @@
 <rss version="2.0">  <channel>
     <title>慎独</title>
     <link>http://www.archs.tk</link>
-    <pubDate>10 Dec 14 14:19 CST</pubDate>
-    <item>
-      <title>大数据分析软件栈</title>
-      <link>http://www.archs.tk/data/bigDataAnalysisStack/</link>
-      <pubDate>2014-12-10 12:00:00 +0800</pubDate>
-      <description>&lt;h1&gt;&lt;a style=&#34;display: block;&#34; name=&#34;出发&#34; href=&#34;#出发&#34;&gt;&lt;/a&gt;出发&lt;/h1&gt;&#xA;&#xA;&lt;p&gt;大数据，重点在规模，像MapReduce一出世强调的就运行在分布式数据集群上。&#xA;这个应该是大数据的本质所在。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;大数据分析，其对象是大数据，其运行环境也自然与分布式集群分不开。&#xA;分布式集群有数据集群（HDFS）也有运算集群（Storm），大数据自身的特点&#xA;确定了它的数据分布性质，在分布式数据的基础上做计算也是现在的炙手可热&#xA;的MapReduce、Spark的基础。&lt;/p&gt;&#xA;&#xA;&lt;h1&gt;&lt;a style=&#34;display: block;&#34; name=&#34;软件栈&#34; href=&#34;#软件栈&#34;&gt;&lt;/a&gt;软件栈&lt;/h1&gt;&#xA;&#xA;&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;集群管理&#34; href=&#34;#集群管理&#34;&gt;&lt;/a&gt;集群管理&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;在Hadoop之初是没有集群管理软件的，从Hadoop搭建的过程需要手动设置&#xA;各台服务的配置项可见一斑。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;Zookeeper&lt;/h3&gt;&#xA;&#xA;&lt;h3&gt;etcd&lt;/h3&gt;&#xA;&#xA;&lt;h3&gt;一致性协调算法&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;Paxos&#xA;Raft&lt;/p&gt;&#xA;&#xA;&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;分布式文件系统&#34; href=&#34;#分布式文件系统&#34;&gt;&lt;/a&gt;分布式文件系统&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;分布式文件系统是分布式并行算法的基础，没有数据并行，计算的并行对&#xA;大数据来讲就没有根基。&lt;/p&gt;&#xA;&#xA;&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;资源和任务管理（分布式计算）&#34; href=&#34;#资源和任务管理（分布式计算）&#34;&gt;&lt;/a&gt;资源和任务管理（分布式计算）&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;借助数据的并行化，以计算发送替代数据发送，是现在MapReduce模式的技术。&#xA;这就有计算任务的分发、资源的神情，任务的监控等需求。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;Hadoop&lt;/h3&gt;&#xA;&#xA;&lt;h3&gt;Yarn&lt;/h3&gt;&#xA;&#xA;&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;计算框架&#34; href=&#34;#计算框架&#34;&gt;&lt;/a&gt;计算框架&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;在分布式任务和资源管理的基础上，实现了一套容易上手分布式计算技术框架。&#xA;特别是在Spark这样的框架中，用户基本上只需要在串行模式下实现计算逻辑，&#xA;其他的资源神情、分配，任务分发、调度等都用框架自身完成。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;MapReduce&lt;/h3&gt;&#xA;&#xA;&lt;h3&gt;Spark&lt;/h3&gt;&#xA;&#xA;&lt;h3&gt;Storm&lt;/h3&gt;&#xA;&#xA;&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;框架之上&#34; href=&#34;#框架之上&#34;&gt;&lt;/a&gt;框架之上&lt;/h2&gt;&#xA;&#xA;&lt;h3&gt;Hive&lt;/h3&gt;&#xA;&#xA;&lt;h3&gt;HBase&lt;/h3&gt;&#xA;&#xA;&lt;h3&gt;Spark Streaming&lt;/h3&gt;&#xA;&#xA;&lt;h3&gt;Shark (Hive on Spark)&lt;/h3&gt;&#xA;&#xA;&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;大数据分析堆栈&#34; href=&#34;#大数据分析堆栈&#34;&gt;&lt;/a&gt;大数据分析堆栈&lt;/h2&gt;&#xA;&#xA;&lt;h3&gt;批处理&lt;/h3&gt;&#xA;&#xA;&lt;h3&gt;即时查询&lt;/h3&gt;&#xA;&#xA;&lt;h3&gt;流式实时分析（Streaming）&lt;/h3&gt;&#xA;</description>
-    </item>
+    <pubDate>04 Jun 15 22:06 CST</pubDate>
     <item>
       <title>Lua画图软件</title>
       <link>http://www.archs.tk/utils/lua.graph/</link>
