@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>http://www.archs.tk/</loc>
+		<loc>http://archs.github.io/</loc>
 	</url>
 	<url>
-		<loc>http://www.archs.tk/utils/lua.graph/</loc>
+		<loc>http://archs.github.io/utils/lua.graph/</loc>
 		<lastmod>2013-07-15</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://www.archs.tk/tips/git-amend/</loc>
+		<loc>http://archs.github.io/tips/git-amend/</loc>
 		<lastmod>2013-07-13</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://www.archs.tk/tips/mingw.build.lua/</loc>
+		<loc>http://archs.github.io/tips/mingw.build.lua/</loc>
 		<lastmod>2013-07-05</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://www.archs.tk/ProgramDesign/dsl/</loc>
+		<loc>http://archs.github.io/ProgramDesign/dsl/</loc>
 		<lastmod>2013-05-29</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://www.archs.tk/tips/fullpowerTinyCore/</loc>
+		<loc>http://archs.github.io/tips/fullpowerTinyCore/</loc>
 		<lastmod>2013-04-18</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://www.archs.tk/tips/hg4git/</loc>
+		<loc>http://archs.github.io/tips/hg4git/</loc>
 		<lastmod>2013-04-11</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://www.archs.tk/go/goschicken/</loc>
+		<loc>http://archs.github.io/go/goschicken/</loc>
 		<lastmod>2013-04-10</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://www.archs.tk/utils/aboutMarkDown/</loc>
+		<loc>http://archs.github.io/utils/aboutMarkDown/</loc>
 		<lastmod>2013-03-05</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
