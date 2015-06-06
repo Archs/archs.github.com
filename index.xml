@@ -625,6 +625,18 @@ func main() {
     </item>
     
     <item>
+      <title>About Me</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Thu, 21 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/Arch.jpg&#34; alt=&#34;Arch&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Gateway_Arch&#34;&gt;Gateway Arch&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>使用Markdown</title>
       <link>http://localhost:1313/post/aboutMarkDown/</link>
       <pubDate>Tue, 05 Mar 2013 00:00:00 +0000</pubDate>
@@ -678,18 +690,6 @@ func PyErr_CheckSignals() bool {
 rst还是有些差距，但是用的机会毕竟不多。&lt;/p&gt;
 
 &lt;p&gt;想看教程的猛击这里&lt;a href=&#34;http://wowubuntu.com/markdown/&#34;&gt;Markdown中文版语法说明&lt;/a&gt; :)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/Arch.jpg&#34; alt=&#34;Arch&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Gateway_Arch&#34;&gt;Gateway Arch&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
