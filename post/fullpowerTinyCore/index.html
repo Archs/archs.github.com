@@ -1,0 +1,194 @@
+<html lang="en">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>在TinyCore中取代BusyBox</title>
+  <meta name="description" content="在TinyCore中取代BusyBox">
+  <meta name="author" content="">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/css/fonts.css">
+  
+  
+  <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/css/pure-min.css">
+  
+
+    <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/css/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/css/custom.css">
+
+  
+  
+  <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/highlight/styles/monokai.css">
+  
+  <script src="http://replace-this-with-your-hugo-site.com/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+
+
+<div class="header pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="desktop pure-menu pure-menu-horizontal nav-menu">
+            
+            <a href="/" class="site-title pure-menu-heading">My Site</a>
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/go" class="pure-menu-link">Go</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/programdesign" class="pure-menu-link">Programdesign</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/tips" class="pure-menu-link">Tips</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/utils" class="pure-menu-link">Utils</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/about" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mobile pure-menu nav-menu">
+            <a href="/" class="pure-menu-heading" id="toggle-home">My Site</a>
+            <a href="#" id="toggle-btn">&#9776;</a>
+            <ul class="pure-menu-list" id="toggle-content" style="display:none;">
+                
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/go" class="pure-menu-link">Go</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/programdesign" class="pure-menu-link">Programdesign</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/tips" class="pure-menu-link">Tips</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/utils" class="pure-menu-link">Utils</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/about" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+	<div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="post">
+            <div class="post-title">
+                <p class="footnote">
+                    <time class="">2013-04-18</time>
+		            
+                    
+                    |
+                    
+                    
+                    tags:<a href="http://replace-this-with-your-hugo-site.com/tags/tinycore">TinyCore</a> <a href="http://replace-this-with-your-hugo-site.com/tags/linux">Linux</a> 
+                    
+
+                    
+                    categories:<a href="http://replace-this-with-your-hugo-site.com/categories/tips">tips</a> 
+                    
+
+                    
+                </p>
+                <h1>在TinyCore中取代BusyBox</h1>
+            </div>
+
+            <div class="post-content">
+                
+                <p>TinyCore为了最小化体积，使用BusyBox构建基本的Shell环境，所以不是
+完全的 <code>GNU compatible</code> ，在编译软件的时候可能造成一定的困扰。如果
+在TinyCore下面编译软件遇到问题，可注意下兼容性问题。</p>
+
+<p>使用</p>
+
+<pre><code>tce-load -wo coreutils util-linux
+</code></pre>
+
+<p>以OnDemand的方式安装 <code>coreutils</code> 和 <code>util-linux</code> ，下载必须软件包。
+使用的时候</p>
+
+<pre><code>tce-load -i coreutils util-linux
+</code></pre>
+
+<p>即可。参见<a href="http://tinycorelinux.net/faq.html#compatibility">TinyCore Wiki</a></p>
+
+            </div>
+        </div>
+	</div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+<div class="footer pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="pure-menu pure-menu-horizontal footer-content">
+            <ul>
+                <li class="pure-menu-heading" id="foot-name">:</li>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+            </ul>
+            <a href="#" class="pure-menu-heading pull-right" id="gototop-btn">↑↑</a>
+        </div>
+	  </div>
+      <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<script src="http://replace-this-with-your-hugo-site.com/js/jquery.min.js" type="text/javascript"></script>
+<script src="http://replace-this-with-your-hugo-site.com/js/jquery.timeago.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+    $("time.timeago").timeago();
+  })
+  $("#toggle-btn").click(function(){
+    $("#toggle-content").toggle();
+    if($(this).html() === "☰") {
+        $(this).html("X")
+    } else {
+        $(this).html("☰")
+    }
+  });
+  $(window).resize(function(){
+    if(window.innerWidth > 768) {
+      $(".desktop").removeAttr("style");
+    }
+  });
+</script>
+
+</body>
+</html>
+

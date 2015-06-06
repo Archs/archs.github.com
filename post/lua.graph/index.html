@@ -1,0 +1,439 @@
+<html lang="en">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>Lua画图软件</title>
+  <meta name="description" content="Lua画图软件">
+  <meta name="author" content="">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/css/fonts.css">
+  
+  
+  <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/css/pure-min.css">
+  
+
+    <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/css/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/css/custom.css">
+
+  
+  
+  <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/highlight/styles/monokai.css">
+  
+  <script src="http://replace-this-with-your-hugo-site.com/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+
+
+<div class="header pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="desktop pure-menu pure-menu-horizontal nav-menu">
+            
+            <a href="/" class="site-title pure-menu-heading">My Site</a>
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/go" class="pure-menu-link">Go</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/programdesign" class="pure-menu-link">Programdesign</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/tips" class="pure-menu-link">Tips</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/utils" class="pure-menu-link">Utils</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/about" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mobile pure-menu nav-menu">
+            <a href="/" class="pure-menu-heading" id="toggle-home">My Site</a>
+            <a href="#" id="toggle-btn">&#9776;</a>
+            <ul class="pure-menu-list" id="toggle-content" style="display:none;">
+                
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/go" class="pure-menu-link">Go</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/programdesign" class="pure-menu-link">Programdesign</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/tips" class="pure-menu-link">Tips</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/utils" class="pure-menu-link">Utils</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/about" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+	<div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="post">
+            <div class="post-title">
+                <p class="footnote">
+                    <time class="">2013-07-15</time>
+		            
+                    
+                    |
+                    
+                    
+                    tags:<a href="http://replace-this-with-your-hugo-site.com/tags/lua">Lua</a> <a href="http://replace-this-with-your-hugo-site.com/tags/graph">graph</a> <a href="http://replace-this-with-your-hugo-site.com/tags/script">script</a> 
+                    
+
+                    
+
+                    
+                </p>
+                <h1>Lua画图软件</h1>
+            </div>
+
+            <div class="post-content">
+                
+                <p>在网上看到一篇文章 <a href="http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html">用Lua画二元方程</a>，很有意思。</p>
+
+<p>作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。</p>
+
+<p>这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序:
+<a href="/assets/media/graph.exe">下载链接</a></p>
+
+<pre><code>setmetatable(_G, { __index = math })
+e = exp(1)
+
+cfg=[[
+Config={Width=400, Height=400, Xmin=-100, Xmax=100, Ymin=-100, Ymax=100, Split = 4, Expr=&quot;abs(x - y) % 20 &lt; 0.0001&quot;}
+
+function between(x, minValue, maxValue)
+  return x &gt;= minValue and x &lt;= maxValue
+end
+
+function belongto(x, ranges)
+ for _,range in ipairs(ranges) do
+      if between(x, range[1], range[2]) then return true end
+ end
+ return false
+end
+
+Favorites={
+branchname = &quot;Favorites&quot;,
+{leafname = &quot;axis&quot;, tip = &quot;x==0 or y==0&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;rect&quot;, tip = &quot;abs(x+50)&lt;10 and abs(y-20)&lt;20&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;lines(V)&quot;, tip = &quot;x%15 == 0&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;lines(H)&quot;, tip = &quot;y%15 == 0&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;lines(S)&quot;, tip = &quot;(y-x)%20 == 0&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;lines(S)&quot;, tip = &quot;(y+x)%20 == 0&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;triangular&quot;, tip = &quot;y&lt;x+50 and x*y&lt;0 and y&gt;0&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;triangular&quot;, tip = &quot;(x&gt;-20 and x&lt;=0 and y&lt;2*x+40 or x&gt;=0 and x&lt;20 and y&lt;40-2*x) and y&gt;0&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;disk&quot;, tip = &quot;x^2 + y^2 &lt; 500&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;circle&quot;, tip = &quot;abs((x^2 + y^2)  - 1000) &lt; 5&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;ellipse&quot;, tip = &quot;abs(((x/2)^2 + y^2)  - 1000) &lt; 5&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;sun&quot;, tip = &quot;(x==0 or abs(atan(y/x)%0.2)&lt;0.005) and between(x^2+y^2, 1600,4900) or x^2+y^2&lt;900&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;face&quot;, tip = &quot;(x/2-25)^2+(y-50)^2&lt;200 or (x/2+25)^2+(y-50)^2&lt;200 or ((x&gt;-20 and x&lt;=0 and y&lt;2*x+40 or x&gt;=0 and x&lt;20 and y&lt;40-2*x) and y&gt;0) or abs((x/2)^2+(y+30)^2-400)&lt;10 or abs(y-(x/8)^2+80)&lt;0.5&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;circles&quot;, tip = &quot;sqrt(x^2 + y^2) % 10 &lt; 0.1&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;wave&quot;, tip = &quot;(x^2 + y^2) % 80 &lt; 5&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;sin&quot;, tip = &quot;abs(y-20*sin(x/5)) &lt; 0.1&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;chessboard&quot;, tip = &quot;sin(y/5)*cos(x/5) &lt; 0.000001&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;cells&quot;, tip = &quot;sin(y/3) + sin(x/3) &lt; 0.000001&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;texture&quot;, tip = &quot;sin((y/3)^2 + x/2) &lt; 0.1&quot;, config = {Xmin=-100, Xmax=100, Ymin=-100,Ymax=100,Split=4}},
+{leafname = &quot;texture&quot;, tip = &quot;sin(y^2)+cos(x^2) &lt; 0.000001&quot;, config = {Xmin=-8, Xmax=8, Ymin=-8,Ymax=8,Split=5}},
+{leafname = &quot;spots&quot;, tip = &quot;sin(x)^2+cos(y)^2 &lt; 0.5&quot;, config = {Xmin=-8, Xmax=8, Ymin=-8,Ymax=8,Split=5}},
+{leafname = &quot;Margarita&quot;, tip = &quot;mod(sqrt(x^2+y^2)-3.5*atan(x,y)+sin(x)+cos(y),pi)&lt;pi/2&quot;, config = {Xmin=-20, Xmax=20, Ymin=-20,Ymax=20,Split=8}},
+{leafname = &quot;pattern&quot;, tip = &quot;sin(x*sin(y)+y*sin(x)) &lt; 0.001&quot;, config = {Xmin=-12, Xmax=12, Ymin=-12,Ymax=12,Split=8}},
+{leafname = &quot;untitled&quot;, tip = &quot;abs(e^(sin(x)+cos(y))-sin(e^(x+y)))&lt;0.01&quot;, config = {Xmin=-10, Xmax=10, Ymin=-10,Ymax=10,Split=15}},
+{leafname = &quot;untitled&quot;, tip = &quot;abs( sin(sin(x)+cos(y)) - cos(sin(x*y)+cos(x)) )&lt;0.01&quot;, config = {Xmin=-10, Xmax=10, Ymin=-10,Ymax=10,Split=10}},
+{leafname = &quot;untitled&quot;, tip = &quot;abs( sin(x^2+y^2) - cos(x*y) )&lt;0.01&quot;, config = {Xmin=-10, Xmax=10, Ymin=-10,Ymax=10,Split=10}},
+{leafname = &quot;mesh&quot;, tip = &quot;abs( sin(x^2-y^2) - cos(x*y) )&lt;0.01&quot;, config = {Xmin=-10, Xmax=10, Ymin=-10,Ymax=10,Split=10}},
+{leafname = &quot;untitled&quot;, tip = &quot;abs( sin(x^sin(y)+y^cos(x))-cos(y^x+x^y))&lt;0.005&quot;, config = {Xmin=0, Xmax=20, Ymin=0,Ymax=20,Split=10}},
+{leafname = &quot;Frontispiece&quot;, tip = &quot;abs( x/sin(x)+y/sin(y) - x*y/sin(x*y) )&lt;1&quot;, config = {Xmin=-10, Xmax=10, Ymin=-10,Ymax=10,Split=10}},
+{leafname = &quot;Threesome&quot;, tip = &quot;belongto(sin(sqrt((x+5)^2+y^2))*cos(8*atan(y/(x+5)))*sin(sqrt((x-5)^2+(y-5)^2))*cos(8*atan((y-5)/(x-5)))*sin(sqrt(x^2+(y+5)^2))*cos(8*atan((y+5)/x)), {{-0.1,0},{0.2,math.huge}})&quot;, config = {Xmin=-10, Xmax=10, Ymin=-10,Ymax=10,Split=10}},
+{leafname = &quot;TaiChi&quot;, tip = &quot;x^2+y^2&lt;64 and x^2+(y-4)^2&gt;16 and x^2+(y+4)^2&gt;1 and x&lt;=0 or between(x^2+(y+4)^2,1,16) or x^2+(y-4)^2&lt;1 or abs(sqrt(x^2+y^2)-8)&lt;0.005&quot;, config = {Xmin=-10, Xmax=10, Ymin=-10,Ymax=10,Split=10}},
+}
+]]
+
+-- Load Config and Favorites
+-- dofile(&quot;Favorites.lua&quot;)
+-- make sure to load the &quot;config files&quot;
+require(&quot;io&quot;)
+ferr = io.open(&quot;Favorites.lua&quot;)
+if not ferr then
+  assert(loadstring(cfg))()
+else
+  dofile(&quot;Favorites.lua&quot;)
+  io.close(ferr)
+end
+pixels = {}
+for r=1,Config.Height do
+ pixels[r] = {}
+ for c=1,Config.Width do
+       pixels[r][c] = false
+ end
+end
+
+cnv = iup.canvas{ rastersize=string.format(&quot;%dx%d&quot;, Config.Width, Config.Height) }
+treeFavorite = iup.tree{ size = &quot;100x100&quot;}
+
+canvasColor = cd.EncodeColor(255,255,255)
+penColor = cd.EncodeColor(0,0,0)
+
+function selectColor(self)
+ r,g,b = iup.GetColor(iup.CENTER,iup.CENTER)
+self.bgcolor = string.format(&quot;%d %d %d&quot;,r,g,b)
+if self.name == &quot;btnPen&quot; then penColor = cd.EncodeColor(r,g,b)
+else canvasColor = cd.EncodeColor(r,g,b) end
+end
+
+dlg = iup.dialog
+{
+   title=&quot;Plot graphs of equations and inequalities in two vairables&quot;,
+   resize=&quot;NO&quot;,
+   minbox=&quot;NO&quot;,
+   iup.hbox
+   {
+       iup.vbox
+       {
+          iup.frame
+          {
+              title = &quot;Color&quot;,
+              iup.hbox
+              {
+                   iup.label{title = &quot; Canvas: &quot;},
+                   iup.button{ name = &quot;btnCanvas&quot;, size = &quot;22x10&quot;, bgcolor=&quot;255 255 255&quot;, flat=&quot;YES&quot;, action = selectColor},
+                   iup.label{title = &quot; Pen: &quot;},
+                   iup.button{ name = &quot;btnPen&quot;, size = &quot;22x10&quot;, bgcolor=&quot;0 0 0&quot;, flat=&quot;YES&quot;, action = selectColor},
+                   alignment = &quot;ACENTER&quot;
+              }
+          },
+          iup.frame
+          {
+              title = &quot;Range&quot;,
+              iup.vbox
+              {
+                   iup.hbox
+                   {
+                       iup.label{title = &quot;X: &quot;},
+                       iup.text{ name = &quot;txtXMin&quot;, size = &quot;38x10&quot;, value = Config.Xmin},
+                       iup.label{title = &quot; ~ &quot;},
+                       iup.text{ name = &quot;txtXMax&quot;, size = &quot;38x10&quot;, value = Config.Xmax}
+                   },
+                   iup.hbox
+                   {
+                       iup.label{title = &quot;Y: &quot;},
+                       iup.text{ name = &quot;txtYMin&quot;, size = &quot;38x10&quot;, value = Config.Ymin},
+                       iup.label{title = &quot; ~ &quot;},
+                       iup.text{ name = &quot;txtYMax&quot;, size = &quot;38x10&quot;, value = Config.Ymax}
+                   }
+              }
+          },
+          iup.hbox
+          {
+               iup.label{ title = &quot;Pixel Split: &quot; },
+               iup.text{ name = &quot;txtSplit&quot;, value = Config.Split},
+               alignment = &quot;ACENTER&quot;
+          },
+          treeFavorite,
+          margin = &quot;2x2&quot;
+       },
+       iup.vbox
+       {
+           iup.hbox
+           {
+               iup.label{title = &quot;Expression: &quot;},
+               iup.text{ name = &quot;exprtext&quot;, rastersize = (Config.Width-120)..&quot;x22&quot;, value = &quot;abs(x - y) % 20 &lt; 0.0001&quot;},
+               iup.button{title = &quot;Plot&quot;, size = &quot;34x12&quot;, action = function() plotExpression() end},
+               alignment = &quot;ACENTER&quot;
+           },
+           cnv,
+           margin = &quot;2x2&quot;
+       }
+   }
+}
+
+function getNumber(name)
+   return tonumber(iup.GetDialogChild(dlg, name).value)
+end
+
+function setTextValue(name, value)
+   iup.GetDialogChild(dlg, name).value = value
+end
+
+function plotExpression()
+   local expr = iup.GetDialogChild(dlg, &quot;exprtext&quot;).value
+   local func, err = loadstring(&quot;return function (x,y) return &quot;.. expr..&quot; end&quot;)
+   if func==nil then iup.Message(&quot;Error&quot;, &quot;Expression has syntax errors:\r\n&quot;..err) return end
+   equation = func()
+   drawing = true
+   iup.Redraw(cnv, 0)
+end
+
+function cnv:map_cb()
+ canvas = cd.CreateCanvas(cd.IUP, self)
+end
+
+drawing = false
+function cnv:action()
+ canvas:Activate()
+ canvas:Background(canvasColor)
+ canvas:Clear()
+ local width = Config.Width
+ local height = Config.Height
+ if drawing == false then
+   for r=height,1,-1 do
+     for c=1,width do
+         if pixels[r][c] then
+           canvas:Pixel(c, r, penColor)
+         end
+     end
+   end
+   return
+ end
+
+ dlg.active = &quot;NO&quot;
+ local xMin = getNumber(&quot;txtXMin&quot;)
+ local xMax = getNumber(&quot;txtXMax&quot;)
+ local yMin = getNumber(&quot;txtYMin&quot;)
+ local yMax = getNumber(&quot;txtYMax&quot;)
+ local split = getNumber(&quot;txtSplit&quot;)
+ local DX = (xMax - xMin)/width
+ local DY = (yMax - yMin)/height
+ local dx = DX / split
+ local dy = DY / split
+ local x = xMin
+ local y = yMax
+ for r=height,1,-1 do
+     for c=1,width do
+       local fill = isSolution(x,y,dx,dy,split)
+       pixels[r][c] = fill
+       if fill then
+           canvas:Pixel(c, r, penColor)
+       end
+       x = x + DX
+     end
+     x = xMin
+     y = y - DY
+ end
+ drawing = false
+ dlg.active = &quot;YES&quot;
+end
+
+function isSolution(x0,y0,dx,dy,split)
+   local x = x0
+   local y = y0
+   for i=1,split do
+       for j=1,split do
+           if equation(x, y) then return true end
+           x = x + dx
+       end
+       x = x0
+       y = y - dy
+   end
+   return false
+end
+
+function treeFavorite:selection_cb(id, status)
+   if status == 1 then
+       node = Favorites[id]
+       setTextValue(&quot;exprtext&quot;, node.tip)
+       if node.config ~= nil then
+           setTextValue(&quot;txtXMin&quot;, node.config.Xmin)
+           setTextValue(&quot;txtXMax&quot;, node.config.Xmax)
+           setTextValue(&quot;txtYMin&quot;, node.config.Ymin)
+           setTextValue(&quot;txtYMax&quot;, node.config.Ymax)
+           setTextValue(&quot;txtSplit&quot;, node.config.Split)
+       end
+   end
+end
+
+function dlg:close_cb()
+ canvas:Kill()
+ self:destroy()
+ return iup.IGNORE
+end
+
+dlg:show()
+iup.TreeAddNodes(treeFavorite, Favorites)
+iup.MainLoop()
+</code></pre>
+
+            </div>
+        </div>
+	</div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+<div class="footer pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="pure-menu pure-menu-horizontal footer-content">
+            <ul>
+                <li class="pure-menu-heading" id="foot-name">:</li>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+            </ul>
+            <a href="#" class="pure-menu-heading pull-right" id="gototop-btn">↑↑</a>
+        </div>
+	  </div>
+      <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<script src="http://replace-this-with-your-hugo-site.com/js/jquery.min.js" type="text/javascript"></script>
+<script src="http://replace-this-with-your-hugo-site.com/js/jquery.timeago.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+    $("time.timeago").timeago();
+  })
+  $("#toggle-btn").click(function(){
+    $("#toggle-content").toggle();
+    if($(this).html() === "☰") {
+        $(this).html("X")
+    } else {
+        $(this).html("☰")
+    }
+  });
+  $(window).resize(function(){
+    if(window.innerWidth > 768) {
+      $(".desktop").removeAttr("style");
+    }
+  });
+</script>
+
+</body>
+</html>
+

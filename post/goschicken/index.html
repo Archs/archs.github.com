@@ -1,0 +1,210 @@
+<html lang="en">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>Embed ChickenScheme In Go</title>
+  <meta name="description" content="Embed ChickenScheme In Go">
+  <meta name="author" content="">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/css/fonts.css">
+  
+  
+  <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/css/pure-min.css">
+  
+
+    <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/css/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/css/custom.css">
+
+  
+  
+  <link rel="stylesheet" href="http://replace-this-with-your-hugo-site.com/highlight/styles/monokai.css">
+  
+  <script src="http://replace-this-with-your-hugo-site.com/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+
+
+<div class="header pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="desktop pure-menu pure-menu-horizontal nav-menu">
+            
+            <a href="/" class="site-title pure-menu-heading">My Site</a>
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/go" class="pure-menu-link">Go</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/programdesign" class="pure-menu-link">Programdesign</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/tips" class="pure-menu-link">Tips</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/utils" class="pure-menu-link">Utils</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/about" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mobile pure-menu nav-menu">
+            <a href="/" class="pure-menu-heading" id="toggle-home">My Site</a>
+            <a href="#" id="toggle-btn">&#9776;</a>
+            <ul class="pure-menu-list" id="toggle-content" style="display:none;">
+                
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/go" class="pure-menu-link">Go</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/programdesign" class="pure-menu-link">Programdesign</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/tips" class="pure-menu-link">Tips</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/categories/utils" class="pure-menu-link">Utils</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://replace-this-with-your-hugo-site.com/about" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+	<div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="post">
+            <div class="post-title">
+                <p class="footnote">
+                    <time class="">2013-04-10</time>
+		            
+                    
+                    |
+                    
+                    
+                    tags:<a href="http://replace-this-with-your-hugo-site.com/tags/scheme">scheme</a> <a href="http://replace-this-with-your-hugo-site.com/tags/chicken">Chicken</a> <a href="http://replace-this-with-your-hugo-site.com/tags/cgo">cgo</a> <a href="http://replace-this-with-your-hugo-site.com/tags/go">go</a> 
+                    
+
+                    
+                    categories:<a href="http://replace-this-with-your-hugo-site.com/categories/go">go</a> 
+                    
+
+                    
+                </p>
+                <h1>Embed ChickenScheme In Go</h1>
+            </div>
+
+            <div class="post-content">
+                
+                <p>使用cgo加载c库的主要麻烦在于cgo不识别c头文件中的宏
+而chicken scheme初始化的时候要调用一个全局函数CHICKEN_default_toplevel。
+在cgo中使用 <code>void* dfp = CHICKEN_default_toplevel;</code> 可以直接声明。</p>
+
+<pre><code>package main
+
+/*
+#cgo windows CFLAGS: -D_GUN_SOURCE -I&quot;c:/my-chicken/include/chicken&quot; -DHAVE_CHICKEN_CONFIG_H -DC_ENABLE_PTABLES
+#cgo windows LDFLAGS: -L&quot;c:/my-chicken/lib&quot; -lchicken -lm
+
+#include &lt;chicken.h&gt;
+
+void* dfp = CHICKEN_default_toplevel;
+*/
+import &quot;C&quot;
+import (
+    &quot;unsafe&quot;
+)
+
+func main() {
+    src := &quot;(+ 1 2 3)&quot;
+    nSrc := 10
+    ret := make([]byte, nSrc)
+    p := (*C.char)(unsafe.Pointer(&amp;ret[0]))
+    C.CHICKEN_run(C.dfp)
+    C.CHICKEN_eval_string_to_string(C.CString(src), p, C.int(nSrc))
+    println(string(ret))
+}
+</code></pre>
+
+<p>最近才发现，cgo不仅可以识别注释中的c语句，对于相同目录下面的*.c文件也可
+自动编译，呵呵，像sqlite之类的库就可以静态的形式直接使用了。</p>
+
+            </div>
+        </div>
+	</div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+<div class="footer pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="pure-menu pure-menu-horizontal footer-content">
+            <ul>
+                <li class="pure-menu-heading" id="foot-name">:</li>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+            </ul>
+            <a href="#" class="pure-menu-heading pull-right" id="gototop-btn">↑↑</a>
+        </div>
+	  </div>
+      <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<script src="http://replace-this-with-your-hugo-site.com/js/jquery.min.js" type="text/javascript"></script>
+<script src="http://replace-this-with-your-hugo-site.com/js/jquery.timeago.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+    $("time.timeago").timeago();
+  })
+  $("#toggle-btn").click(function(){
+    $("#toggle-content").toggle();
+    if($(this).html() === "☰") {
+        $(this).html("X")
+    } else {
+        $(this).html("☰")
+    }
+  });
+  $(window).resize(function(){
+    if(window.innerWidth > 768) {
+      $(".desktop").removeAttr("style");
+    }
+  });
+</script>
+
+</body>
+</html>
+

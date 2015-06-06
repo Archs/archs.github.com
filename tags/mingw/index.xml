@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mingw on My Site</title>
+    <link>http://replace-this-with-your-hugo-site.com/tags/mingw/</link>
+    <description>Recent content in Mingw on My Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Jul 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/mingw/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>使用Mingw Build Lua 的注意事项</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/mingw.build.lua/</link>
+      <pubDate>Fri, 05 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/mingw.build.lua/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Lua的扩展库使用LUA_LIB宏定义&lt;/p&gt;
+
+&lt;p&gt;在c文件中引入lua的头文件之前加入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#define LUA_LIB
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;使用windows库的时候，需要在gcc命令行中引入库的顺序&lt;/p&gt;
+
+&lt;p&gt;这样&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gcc -lwsock32 ws_c_file.c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可能会造成winsock函数未定义应用的问题，最好使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gcc ws_c_file.c -lwsock32 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个问题相当诡异，简直不知道怎么说是好。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

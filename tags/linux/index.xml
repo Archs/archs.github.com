@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on My Site</title>
+    <link>http://replace-this-with-your-hugo-site.com/tags/linux/</link>
+    <description>Recent content in Linux on My Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Apr 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>在TinyCore中取代BusyBox</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/fullpowerTinyCore/</link>
+      <pubDate>Thu, 18 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/fullpowerTinyCore/</guid>
+      <description>&lt;p&gt;TinyCore为了最小化体积，使用BusyBox构建基本的Shell环境，所以不是
+完全的 &lt;code&gt;GNU compatible&lt;/code&gt; ，在编译软件的时候可能造成一定的困扰。如果
+在TinyCore下面编译软件遇到问题，可注意下兼容性问题。&lt;/p&gt;
+
+&lt;p&gt;使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tce-load -wo coreutils util-linux
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以OnDemand的方式安装 &lt;code&gt;coreutils&lt;/code&gt; 和 &lt;code&gt;util-linux&lt;/code&gt; ，下载必须软件包。
+使用的时候&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tce-load -i coreutils util-linux
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;即可。参见&lt;a href=&#34;http://tinycorelinux.net/faq.html#compatibility&#34;&gt;TinyCore Wiki&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
