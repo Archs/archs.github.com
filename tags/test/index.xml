@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Test on Archs</title>
-    <link>http://localhost:1313/tags/test/</link>
+    <link>http://archs.github.io/tags/test/</link>
     <description>Recent content in Test on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 05 Mar 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://archs.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>使用Markdown</title>
-      <link>http://localhost:1313/post/aboutMarkDown/</link>
+      <link>http://archs.github.io/post/aboutMarkDown/</link>
       <pubDate>Tue, 05 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/aboutMarkDown/</guid>
+      <guid>http://archs.github.io/post/aboutMarkDown/</guid>
       <description>
 
 &lt;p&gt;感觉比rst简单许多，链接的使用也没有那么多的麻烦。

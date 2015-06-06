@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hg on Archs</title>
-    <link>http://localhost:1313/tags/hg/</link>
+    <link>http://archs.github.io/tags/hg/</link>
     <description>Recent content in Hg on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 11 Apr 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/hg/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://archs.github.io/tags/hg/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>使用hg访问git仓库</title>
-      <link>http://localhost:1313/post/hg4git/</link>
+      <link>http://archs.github.io/post/hg4git/</link>
       <pubDate>Thu, 11 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/hg4git/</guid>
+      <guid>http://archs.github.io/post/hg4git/</guid>
       <description>
 
 &lt;p&gt;hg用久了，觉得git命令很别扭，高级功能很少用到，速度差别基本上
