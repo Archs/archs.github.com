@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tinycore on Archs</title>
-    <link>http://archs.github.io/tags/tinycore/</link>
+    <link>http://localhost:1313/tags/tinycore/</link>
     <description>Recent content in Tinycore on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 18 Apr 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://archs.github.io/tags/tinycore/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/tinycore/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>在TinyCore中取代BusyBox</title>
-      <link>http://archs.github.io/post/fullpowerTinyCore/</link>
+      <link>http://localhost:1313/post/fullpowerTinyCore/</link>
       <pubDate>Thu, 18 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://archs.github.io/post/fullpowerTinyCore/</guid>
+      <guid>http://localhost:1313/post/fullpowerTinyCore/</guid>
       <description>&lt;p&gt;TinyCore为了最小化体积，使用BusyBox构建基本的Shell环境，所以不是
 完全的 &lt;code&gt;GNU compatible&lt;/code&gt; ，在编译软件的时候可能造成一定的困扰。如果
 在TinyCore下面编译软件遇到问题，可注意下兼容性问题。&lt;/p&gt;

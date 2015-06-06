@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Archs</title>
-    <link>http://archs.github.io/post/</link>
+    <link>http://localhost:1313/post/</link>
     <description>Recent content in Posts on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 15 Jul 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://archs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Lua画图软件</title>
-      <link>http://archs.github.io/post/lua.graph/</link>
+      <link>http://localhost:1313/post/lua.graph/</link>
       <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://archs.github.io/post/lua.graph/</guid>
+      <guid>http://localhost:1313/post/lua.graph/</guid>
       <description>&lt;p&gt;在网上看到一篇文章 &lt;a href=&#34;http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html&#34;&gt;用Lua画二元方程&lt;/a&gt;，很有意思。&lt;/p&gt;
 
 &lt;p&gt;作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。&lt;/p&gt;
 
 &lt;p&gt;这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序:
-&lt;a href=&#34;http://archs.github.io/assets/media/graph.exe&#34;&gt;下载链接&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;http://localhost:1313/assets/media/graph.exe&#34;&gt;下载链接&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;setmetatable(_G, { __index = math })
 e = exp(1)
@@ -283,10 +283,10 @@ iup.MainLoop()
     
     <item>
       <title>GIT的奇技淫巧--修改历史</title>
-      <link>http://archs.github.io/post/git-amend/</link>
+      <link>http://localhost:1313/post/git-amend/</link>
       <pubDate>Sat, 13 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://archs.github.io/post/git-amend/</guid>
+      <guid>http://localhost:1313/post/git-amend/</guid>
       <description>&lt;p&gt;使用版本控制系统这么久，被GIT震惊了， 简直是无所不能啊，下面就是
 一个修改历史版本中所有用户信息的命令，叹为观止。&lt;/p&gt;
 
@@ -305,10 +305,10 @@ iup.MainLoop()
     
     <item>
       <title>使用Mingw Build Lua 的注意事项</title>
-      <link>http://archs.github.io/post/mingw.build.lua/</link>
+      <link>http://localhost:1313/post/mingw.build.lua/</link>
       <pubDate>Fri, 05 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://archs.github.io/post/mingw.build.lua/</guid>
+      <guid>http://localhost:1313/post/mingw.build.lua/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Lua的扩展库使用LUA_LIB宏定义&lt;/p&gt;
 
@@ -336,10 +336,10 @@ iup.MainLoop()
     
     <item>
       <title>DSL的模式和方法</title>
-      <link>http://archs.github.io/post/dsl/</link>
+      <link>http://localhost:1313/post/dsl/</link>
       <pubDate>Wed, 29 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://archs.github.io/post/dsl/</guid>
+      <guid>http://localhost:1313/post/dsl/</guid>
       <description>
 
 &lt;p&gt;最近研究Lisp，对Domain Specific Language很是产生了一些兴趣。&lt;/p&gt;
@@ -489,10 +489,10 @@ DSL中Literal Map的形式，其本身也是Go中的Literal Map。&lt;/p&gt;&lt;
     
     <item>
       <title>在TinyCore中取代BusyBox</title>
-      <link>http://archs.github.io/post/fullpowerTinyCore/</link>
+      <link>http://localhost:1313/post/fullpowerTinyCore/</link>
       <pubDate>Thu, 18 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://archs.github.io/post/fullpowerTinyCore/</guid>
+      <guid>http://localhost:1313/post/fullpowerTinyCore/</guid>
       <description>&lt;p&gt;TinyCore为了最小化体积，使用BusyBox构建基本的Shell环境，所以不是
 完全的 &lt;code&gt;GNU compatible&lt;/code&gt; ，在编译软件的时候可能造成一定的困扰。如果
 在TinyCore下面编译软件遇到问题，可注意下兼容性问题。&lt;/p&gt;
@@ -514,10 +514,10 @@ DSL中Literal Map的形式，其本身也是Go中的Literal Map。&lt;/p&gt;&lt;
     
     <item>
       <title>使用hg访问git仓库</title>
-      <link>http://archs.github.io/post/hg4git/</link>
+      <link>http://localhost:1313/post/hg4git/</link>
       <pubDate>Thu, 11 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://archs.github.io/post/hg4git/</guid>
+      <guid>http://localhost:1313/post/hg4git/</guid>
       <description>
 
 &lt;p&gt;hg用久了，觉得git命令很别扭，高级功能很少用到，速度差别基本上
@@ -585,10 +585,10 @@ $ hg push
     
     <item>
       <title>Embed ChickenScheme In Go</title>
-      <link>http://archs.github.io/post/goschicken/</link>
+      <link>http://localhost:1313/post/goschicken/</link>
       <pubDate>Wed, 10 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://archs.github.io/post/goschicken/</guid>
+      <guid>http://localhost:1313/post/goschicken/</guid>
       <description>&lt;p&gt;使用cgo加载c库的主要麻烦在于cgo不识别c头文件中的宏
 而chicken scheme初始化的时候要调用一个全局函数CHICKEN_default_toplevel。
 在cgo中使用 &lt;code&gt;void* dfp = CHICKEN_default_toplevel;&lt;/code&gt; 可以直接声明。&lt;/p&gt;
@@ -626,10 +626,10 @@ func main() {
     
     <item>
       <title>使用Markdown</title>
-      <link>http://archs.github.io/post/aboutMarkDown/</link>
+      <link>http://localhost:1313/post/aboutMarkDown/</link>
       <pubDate>Tue, 05 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://archs.github.io/post/aboutMarkDown/</guid>
+      <guid>http://localhost:1313/post/aboutMarkDown/</guid>
       <description>
 
 &lt;p&gt;感觉比rst简单许多，链接的使用也没有那么多的麻烦。
