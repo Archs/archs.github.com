@@ -6,6 +6,8 @@
     <description>Recent content in Graph on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>archs@archs.tk (Archs)</managingEditor>
+    <webMaster>archs@archs.tk (Archs)</webMaster>
     <lastBuildDate>Mon, 15 Jul 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://archs.github.io/tags/graph/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +15,7 @@
       <title>Lua画图软件</title>
       <link>http://archs.github.io/post/lua.graph/</link>
       <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/lua.graph/</guid>
       <description>&lt;p&gt;在网上看到一篇文章 &lt;a href=&#34;http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html&#34;&gt;用Lua画二元方程&lt;/a&gt;，很有意思。&lt;/p&gt;
 

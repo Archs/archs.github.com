@@ -6,6 +6,8 @@
     <description>Recent content in Markdown on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>archs@archs.tk (Archs)</managingEditor>
+    <webMaster>archs@archs.tk (Archs)</webMaster>
     <lastBuildDate>Tue, 05 Mar 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://archs.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +15,7 @@
       <title>使用Markdown</title>
       <link>http://archs.github.io/post/aboutMarkDown/</link>
       <pubDate>Tue, 05 Mar 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/aboutMarkDown/</guid>
       <description>
 

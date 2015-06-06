@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Lua画图软件</title>
   <meta name="description" content="Lua画图软件">
-  <meta name="author" content="">
+  <meta name="author" content="Archs">
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,10 +15,10 @@
   
   
   <link rel="stylesheet" href="http://archs.github.io/css/fonts.css">
-  <link rel="stylesheet" href="http://archs.github.io//css/font-awesome.min.css">
   
   
   <link rel="stylesheet" href="http://archs.github.io/css/pure-min.css">
+  <link rel="stylesheet" href="http://archs.github.io/css/semantic.min.css">
   
 
     <link rel="stylesheet" href="http://archs.github.io/css/grids-responsive-min.css">
@@ -36,76 +36,48 @@
 <body>
 
 
-<div class="header pure-g">
-    <div class="pure-u-1-24 pure-u-md-5-24"></div>
-    <div class="pure-u-11-12 pure-u-md-5-8">
-        <div class="desktop pure-menu pure-menu-horizontal nav-menu">
-            
-            <a href="/" class="site-title pure-menu-heading">Archs</a>
-            <ul class="pure-menu-list">
-                
-                <li class="pure-menu-item">
-                    <a href="http://archs.github.io/categories/go" class="pure-menu-link">Go</a>
-                </li>
-                
-                <li class="pure-menu-item">
-                    <a href="http://archs.github.io/categories/programdesign" class="pure-menu-link">Programdesign</a>
-                </li>
-                
-                <li class="pure-menu-item">
-                    <a href="http://archs.github.io/categories/tips" class="pure-menu-link">Tips</a>
-                </li>
-                
-                <li class="pure-menu-item">
-                    <a href="http://archs.github.io/categories/utils" class="pure-menu-link">Utils</a>
-                </li>
-                
-                <li class="pure-menu-item">
-                    <a href="http://archs.github.io/about" class="pure-menu-link">About</a>
-                </li>
-                <li class="pure-menu-item">
-                    <a href="" type="application/rss+xml" class="pure-menu-link"><i class="fa fa-rss"></i></a>
-                </li>
-            </ul>
-        </div>
-        <div class="mobile pure-menu nav-menu">
-            <a href="/" class="pure-menu-heading" id="toggle-home">Archs</a>
-            <a href="#" id="toggle-btn">&#9776;</a>
-            <ul class="pure-menu-list" id="toggle-content" style="display:none;">
-                
-                
-                <li class="pure-menu-item">
-                    <a href="http://archs.github.io/categories/go" class="pure-menu-link">Go</a>
-                </li>
-                
-                <li class="pure-menu-item">
-                    <a href="http://archs.github.io/categories/programdesign" class="pure-menu-link">Programdesign</a>
-                </li>
-                
-                <li class="pure-menu-item">
-                    <a href="http://archs.github.io/categories/tips" class="pure-menu-link">Tips</a>
-                </li>
-                
-                <li class="pure-menu-item">
-                    <a href="http://archs.github.io/categories/utils" class="pure-menu-link">Utils</a>
-                </li>
-                
-                <li class="pure-menu-item">
-                    <a href="http://archs.github.io/about" class="pure-menu-link">About</a>
-                </li>
-                <li class="pure-menu-item">
-                    <a href="" type="application/rss+xml" class="pure-menu-link"><i class="fa fa-rss"></i></a>
-                </li>
-            </ul>
-        </div>
+<div class="ui grid basic segment">
+    <div class="three wide column"></div>
+    <div class="ten wide column">
+      
+
+
+<div class="ui secondary borderless menu">
+    <a class="header item" href="http://archs.github.io/">
+      <i class="home big red icon"></i>
+      Archs
+    </a>
+    <div class="ui borderless right  menu">
+      
+        <a class="item" href="http://archs.github.io/categories/go">
+          <i class="folder icon"></i>
+          Go
+        </a>
+      
+        <a class="item" href="http://archs.github.io/categories/programdesign">
+          <i class="folder icon"></i>
+          Programdesign
+        </a>
+      
+        <a class="item" href="http://archs.github.io/categories/tips">
+          <i class="folder icon"></i>
+          Tips
+        </a>
+      
+        <a class="item" href="http://archs.github.io/categories/utils">
+          <i class="folder icon"></i>
+          Utils
+        </a>
+      
+      <a class="item" href="http://archs.github.io/about">
+         <i class="user icon"></i>
+        About
+      </a>
+      <a class="item" href="">
+        <i class="rss square yellow large icon"></i>RSS
+      </a>
     </div>
-    <div class="pure-u-1-24 pure-u-md-1-6"></div>
 </div>
-
-
-<div class="pure-g">
-    <div class="pure-u-1-24 pure-u-md-5-24"></div>
-	<div class="pure-u-11-12 pure-u-md-5-8">
         <div class="post">
             <div class="post-title">
                 <p class="footnote">
@@ -126,7 +98,6 @@
             </div>
 
             <div class="post-content">
-                
                 <p>在网上看到一篇文章 <a href="http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html">用Lua画二元方程</a>，很有意思。</p>
 
 <p>作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。</p>
@@ -409,31 +380,29 @@ iup.MainLoop()
             </div>
         </div>
 	</div>
-    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+    <div class="three wide column">
+        
+    </div>
 </div>
 
-<div class="footer pure-g">
-    <div class="pure-u-1-24 pure-u-md-5-24"></div>
-    <div class="pure-u-11-12 pure-u-md-5-8">
-        <div class="pure-menu pure-menu-horizontal footer-content">
-            <ul>
-                <li class="pure-menu-heading" id="foot-name">:</li>
+<div class="ui grid">
+    <div class="ui three wide column"></div>
+    <div class="ui ten wide column">
+        <div class="ui text menu">
+            
+                <a class="ui item" href="mailto:archs@archs.tk">
+                    <i class="ui email icon"></i>
+                    Email
+                </a>
+            
 
-                
-
-                
-
-                
-
-                
-
-                
-
-            </ul>
-            <a href="#" class="pure-menu-heading pull-right" id="gototop-btn">↑↑</a>
+            
+                <a class="ui item" href="https://github.com/http://github.com/Archs" >GitHub</a>
+            
+            <a class="ui item" href="#" id="gototop-btn">UP↑↑</a>
         </div>
 	  </div>
-      <div class="pure-u-1-24 pure-u-md-1-6"></div>
+      <div class="ui three wide column"></div>
 </div>
 
 
@@ -443,20 +412,8 @@ iup.MainLoop()
   $(function(){
     $("time.timeago").timeago();
   })
-  $("#toggle-btn").click(function(){
-    $("#toggle-content").toggle();
-    if($(this).html() === "☰") {
-        $(this).html("X")
-    } else {
-        $(this).html("☰")
-    }
-  });
-  $(window).resize(function(){
-    if(window.innerWidth > 768) {
-      $(".desktop").removeAttr("style");
-    }
-  });
 </script>
+
 
 </body>
 </html>

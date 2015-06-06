@@ -6,6 +6,8 @@
     <description>Recent content on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>archs@archs.tk (Archs)</managingEditor>
+    <webMaster>archs@archs.tk (Archs)</webMaster>
     <lastBuildDate>Mon, 15 Jul 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://archs.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +15,7 @@
       <title>Lua画图软件</title>
       <link>http://archs.github.io/post/lua.graph/</link>
       <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/lua.graph/</guid>
       <description>&lt;p&gt;在网上看到一篇文章 &lt;a href=&#34;http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html&#34;&gt;用Lua画二元方程&lt;/a&gt;，很有意思。&lt;/p&gt;
 
@@ -285,7 +287,7 @@ iup.MainLoop()
       <title>GIT的奇技淫巧--修改历史</title>
       <link>http://archs.github.io/post/git-amend/</link>
       <pubDate>Sat, 13 Jul 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/git-amend/</guid>
       <description>&lt;p&gt;使用版本控制系统这么久，被GIT震惊了， 简直是无所不能啊，下面就是
 一个修改历史版本中所有用户信息的命令，叹为观止。&lt;/p&gt;
@@ -307,7 +309,7 @@ iup.MainLoop()
       <title>使用Mingw Build Lua 的注意事项</title>
       <link>http://archs.github.io/post/mingw.build.lua/</link>
       <pubDate>Fri, 05 Jul 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/mingw.build.lua/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Lua的扩展库使用LUA_LIB宏定义&lt;/p&gt;
@@ -338,7 +340,7 @@ iup.MainLoop()
       <title>DSL的模式和方法</title>
       <link>http://archs.github.io/post/dsl/</link>
       <pubDate>Wed, 29 May 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/dsl/</guid>
       <description>
 
@@ -491,7 +493,7 @@ DSL中Literal Map的形式，其本身也是Go中的Literal Map。&lt;/p&gt;&lt;
       <title>在TinyCore中取代BusyBox</title>
       <link>http://archs.github.io/post/fullpowerTinyCore/</link>
       <pubDate>Thu, 18 Apr 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/fullpowerTinyCore/</guid>
       <description>&lt;p&gt;TinyCore为了最小化体积，使用BusyBox构建基本的Shell环境，所以不是
 完全的 &lt;code&gt;GNU compatible&lt;/code&gt; ，在编译软件的时候可能造成一定的困扰。如果
@@ -516,7 +518,7 @@ DSL中Literal Map的形式，其本身也是Go中的Literal Map。&lt;/p&gt;&lt;
       <title>使用hg访问git仓库</title>
       <link>http://archs.github.io/post/hg4git/</link>
       <pubDate>Thu, 11 Apr 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/hg4git/</guid>
       <description>
 
@@ -587,7 +589,7 @@ $ hg push
       <title>Embed ChickenScheme In Go</title>
       <link>http://archs.github.io/post/goschicken/</link>
       <pubDate>Wed, 10 Apr 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/goschicken/</guid>
       <description>&lt;p&gt;使用cgo加载c库的主要麻烦在于cgo不识别c头文件中的宏
 而chicken scheme初始化的时候要调用一个全局函数CHICKEN_default_toplevel。
@@ -628,7 +630,7 @@ func main() {
       <title>About Me</title>
       <link>http://archs.github.io/about/</link>
       <pubDate>Thu, 21 Mar 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/about/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;http://archs.github.io/img/Arch.jpg&#34; alt=&#34;Arch&#34; /&gt;&lt;/p&gt;
 
@@ -640,7 +642,7 @@ func main() {
       <title>使用Markdown</title>
       <link>http://archs.github.io/post/aboutMarkDown/</link>
       <pubDate>Tue, 05 Mar 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/aboutMarkDown/</guid>
       <description>
 

@@ -6,6 +6,8 @@
     <description>Recent content in Go on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>archs@archs.tk (Archs)</managingEditor>
+    <webMaster>archs@archs.tk (Archs)</webMaster>
     <lastBuildDate>Wed, 29 May 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://archs.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +15,7 @@
       <title>DSL的模式和方法</title>
       <link>http://archs.github.io/post/dsl/</link>
       <pubDate>Wed, 29 May 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/dsl/</guid>
       <description>
 
@@ -166,7 +168,7 @@ DSL中Literal Map的形式，其本身也是Go中的Literal Map。&lt;/p&gt;&lt;
       <title>Embed ChickenScheme In Go</title>
       <link>http://archs.github.io/post/goschicken/</link>
       <pubDate>Wed, 10 Apr 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/goschicken/</guid>
       <description>&lt;p&gt;使用cgo加载c库的主要麻烦在于cgo不识别c头文件中的宏
 而chicken scheme初始化的时候要调用一个全局函数CHICKEN_default_toplevel。

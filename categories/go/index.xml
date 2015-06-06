@@ -6,6 +6,8 @@
     <description>Recent content in Go on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>archs@archs.tk (Archs)</managingEditor>
+    <webMaster>archs@archs.tk (Archs)</webMaster>
     <lastBuildDate>Wed, 10 Apr 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://archs.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +15,7 @@
       <title>Embed ChickenScheme In Go</title>
       <link>http://archs.github.io/post/goschicken/</link>
       <pubDate>Wed, 10 Apr 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/goschicken/</guid>
       <description>&lt;p&gt;使用cgo加载c库的主要麻烦在于cgo不识别c头文件中的宏
 而chicken scheme初始化的时候要调用一个全局函数CHICKEN_default_toplevel。

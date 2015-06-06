@@ -6,6 +6,8 @@
     <description>Recent content in Hg on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>archs@archs.tk (Archs)</managingEditor>
+    <webMaster>archs@archs.tk (Archs)</webMaster>
     <lastBuildDate>Thu, 11 Apr 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://archs.github.io/tags/hg/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +15,7 @@
       <title>使用hg访问git仓库</title>
       <link>http://archs.github.io/post/hg4git/</link>
       <pubDate>Thu, 11 Apr 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/hg4git/</guid>
       <description>
 

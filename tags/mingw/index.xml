@@ -6,6 +6,8 @@
     <description>Recent content in Mingw on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>archs@archs.tk (Archs)</managingEditor>
+    <webMaster>archs@archs.tk (Archs)</webMaster>
     <lastBuildDate>Fri, 05 Jul 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://archs.github.io/tags/mingw/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +15,7 @@
       <title>使用Mingw Build Lua 的注意事项</title>
       <link>http://archs.github.io/post/mingw.build.lua/</link>
       <pubDate>Fri, 05 Jul 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/mingw.build.lua/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Lua的扩展库使用LUA_LIB宏定义&lt;/p&gt;

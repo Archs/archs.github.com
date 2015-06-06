@@ -6,6 +6,8 @@
     <description>Recent content in Git on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>archs@archs.tk (Archs)</managingEditor>
+    <webMaster>archs@archs.tk (Archs)</webMaster>
     <lastBuildDate>Sat, 13 Jul 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://archs.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +15,7 @@
       <title>GIT的奇技淫巧--修改历史</title>
       <link>http://archs.github.io/post/git-amend/</link>
       <pubDate>Sat, 13 Jul 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/git-amend/</guid>
       <description>&lt;p&gt;使用版本控制系统这么久，被GIT震惊了， 简直是无所不能啊，下面就是
 一个修改历史版本中所有用户信息的命令，叹为观止。&lt;/p&gt;
@@ -35,7 +37,7 @@
       <title>使用hg访问git仓库</title>
       <link>http://archs.github.io/post/hg4git/</link>
       <pubDate>Thu, 11 Apr 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/hg4git/</guid>
       <description>
 

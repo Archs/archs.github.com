@@ -6,6 +6,8 @@
     <description>Recent content in Dsl on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>archs@archs.tk (Archs)</managingEditor>
+    <webMaster>archs@archs.tk (Archs)</webMaster>
     <lastBuildDate>Wed, 29 May 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://archs.github.io/tags/dsl/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +15,7 @@
       <title>DSL的模式和方法</title>
       <link>http://archs.github.io/post/dsl/</link>
       <pubDate>Wed, 29 May 2013 00:00:00 +0000</pubDate>
-      
+      <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/post/dsl/</guid>
       <description>
 
