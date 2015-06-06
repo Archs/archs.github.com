@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dsl on My Site</title>
-    <link>http://replace-this-with-your-hugo-site.com/tags/dsl/</link>
-    <description>Recent content in Dsl on My Site</description>
+    <title>Dsl on Archs</title>
+    <link>http://archs.github.io/tags/dsl/</link>
+    <description>Recent content in Dsl on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 29 May 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/dsl/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://archs.github.io/tags/dsl/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>DSL的模式和方法</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/dsl/</link>
+      <link>http://archs.github.io/post/dsl/</link>
       <pubDate>Wed, 29 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/dsl/</guid>
+      <guid>http://archs.github.io/post/dsl/</guid>
       <description>
 
 &lt;p&gt;最近研究Lisp，对Domain Specific Language很是产生了一些兴趣。&lt;/p&gt;

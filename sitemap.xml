@@ -2,53 +2,53 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://replace-this-with-your-hugo-site.com/</loc>
+    <loc>http://archs.github.io/</loc>
     <lastmod>2013-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://replace-this-with-your-hugo-site.com/post/lua.graph/</loc>
+    <loc>http://archs.github.io/post/lua.graph/</loc>
     <lastmod>2013-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://replace-this-with-your-hugo-site.com/post/git-amend/</loc>
+    <loc>http://archs.github.io/post/git-amend/</loc>
     <lastmod>2013-07-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://replace-this-with-your-hugo-site.com/post/mingw.build.lua/</loc>
+    <loc>http://archs.github.io/post/mingw.build.lua/</loc>
     <lastmod>2013-07-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://replace-this-with-your-hugo-site.com/post/dsl/</loc>
+    <loc>http://archs.github.io/post/dsl/</loc>
     <lastmod>2013-05-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://replace-this-with-your-hugo-site.com/post/fullpowerTinyCore/</loc>
+    <loc>http://archs.github.io/post/fullpowerTinyCore/</loc>
     <lastmod>2013-04-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://replace-this-with-your-hugo-site.com/post/hg4git/</loc>
+    <loc>http://archs.github.io/post/hg4git/</loc>
     <lastmod>2013-04-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://replace-this-with-your-hugo-site.com/post/goschicken/</loc>
+    <loc>http://archs.github.io/post/goschicken/</loc>
     <lastmod>2013-04-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://replace-this-with-your-hugo-site.com/post/aboutMarkDown/</loc>
+    <loc>http://archs.github.io/post/aboutMarkDown/</loc>
     <lastmod>2013-03-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://replace-this-with-your-hugo-site.com/about/</loc>
+    <loc>http://archs.github.io/about/</loc>
   </url>
   
 </urlset>

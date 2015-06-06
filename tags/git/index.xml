@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on My Site</title>
-    <link>http://replace-this-with-your-hugo-site.com/tags/git/</link>
-    <description>Recent content in Git on My Site</description>
+    <title>Git on Archs</title>
+    <link>http://archs.github.io/tags/git/</link>
+    <description>Recent content in Git on Archs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 13 Jul 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://archs.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>GIT的奇技淫巧--修改历史</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/git-amend/</link>
+      <link>http://archs.github.io/post/git-amend/</link>
       <pubDate>Sat, 13 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/git-amend/</guid>
+      <guid>http://archs.github.io/post/git-amend/</guid>
       <description>&lt;p&gt;使用版本控制系统这么久，被GIT震惊了， 简直是无所不能啊，下面就是
 一个修改历史版本中所有用户信息的命令，叹为观止。&lt;/p&gt;
 
@@ -33,10 +33,10 @@
     
     <item>
       <title>使用hg访问git仓库</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/hg4git/</link>
+      <link>http://archs.github.io/post/hg4git/</link>
       <pubDate>Thu, 11 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/hg4git/</guid>
+      <guid>http://archs.github.io/post/hg4git/</guid>
       <description>
 
 &lt;p&gt;hg用久了，觉得git命令很别扭，高级功能很少用到，速度差别基本上
