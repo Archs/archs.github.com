@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hg on Archs</title>
+    <link>http://archs.github.io/tags/hg/</link>
+    <description>Recent content in Hg on Archs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>archs@archs.tk (Archs)</managingEditor>
+    <webMaster>archs@archs.tk (Archs)</webMaster>
+    <lastBuildDate>Thu, 11 Apr 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://archs.github.io/tags/hg/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>使用hg访问git仓库</title>
+      <link>http://archs.github.io/post/hg4git/</link>
+      <pubDate>Thu, 11 Apr 2013 00:00:00 +0000</pubDate>
+      <author>archs@archs.tk (Archs)</author>
+      <guid>http://archs.github.io/post/hg4git/</guid>
+      <description>
+
+&lt;p&gt;hg用久了，觉得git命令很别扭，高级功能很少用到，速度差别基本上
+感觉不出来，哈，所以还是hg喽. 唯一的问题就在于Github，它不支持hg。
+好在hg有一个hggit的扩展，有一次感叹一下python的“batter included”！&lt;/p&gt;
+
+&lt;h2 id=&#34;安装前准备:b5ab3f4ab51707d5e17af5dc5764c732&#34;&gt;安装前准备&lt;/h2&gt;
+
+&lt;p&gt;Linux下面自然不用多说，Windows下面要注意几个问题&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;删除Mercurial提供的exe或者mis安装过的独立版本&lt;/li&gt;
+&lt;li&gt;安装有Mingw，当然你用msvc的话下面的就可以省略了，
+不过我还没有尝试过&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设置Python Disutils的默认编译器为Gcc
+进入 &lt;code&gt;PYTHON_HOME/Lib/distutils&lt;/code&gt; 建立新文件 &lt;code&gt;distutils.cfg&lt;/code&gt; 。
+输入以下内容：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[build]
+compiler=mingw32
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;安装:b5ab3f4ab51707d5e17af5dc5764c732&#34;&gt;安装&lt;/h2&gt;
+
+&lt;p&gt;安装就简单了，使用 &lt;code&gt;easy_install&lt;/code&gt; 或者 &lt;code&gt;pip&lt;/code&gt; 直接&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pip install mercurial
+pip install hg-git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后配置hg加载hggit扩展，在用户目录下的 &lt;code&gt;.hgrc&lt;/code&gt; 文件中加入&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[extensions]
+bookmarks =
+hggit =
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后输入 &lt;code&gt;hg help&lt;/code&gt; 就能看看到hggit已加载的输出&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;enabled extensions:
+
+hggit         push and pull from a Git server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;使用:b5ab3f4ab51707d5e17af5dc5764c732&#34;&gt;使用&lt;/h2&gt;
+
+&lt;p&gt;使用的时候就是普遍的hg的命令了，这是相当happy的。
+要注意的是git路径到hggit的转换，比如github中ssh方式访问
+&lt;code&gt;git@github.com:username/reposname.git&lt;/code&gt; 要换成
+&lt;code&gt;git+ssh://git@github.com:username/reposname.git&lt;/code&gt; 就可以了&lt;/p&gt;
+
+&lt;p&gt;还有一个推送已有hg库到git库的方法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd hg-git # (a Mercurial repository)
+$ hg bookmark -r default master # make a bookmark of master for default, so a ref gets created
+$ hg push git+ssh://git@github.com/schacon/hg-git.git
+$ hg push
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;enjoy-you-git-now:b5ab3f4ab51707d5e17af5dc5764c732&#34;&gt;Enjoy you Git Now!&lt;/h1&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

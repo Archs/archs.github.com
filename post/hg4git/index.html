@@ -1,0 +1,214 @@
+<html lang="en">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>使用hg访问git仓库</title>
+  <meta name="description" content="使用hg访问git仓库">
+  <meta name="author" content="Archs">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://archs.github.io/css/semantic.min.css">
+  
+
+    <link rel="stylesheet" href="http://archs.github.io/css/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="http://archs.github.io/css/custom.css">
+
+  
+  
+  <link rel="stylesheet" href="http://archs.github.io/js/highlight/styles/monokai.css">
+  
+  <script src="http://archs.github.io/js/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+
+
+<div class="ui centered grid">
+    <div class="twelve wide column">
+      
+
+
+<div class="ui secondary  menu">
+    <a class="header item" href="http://archs.github.io/">
+      <i class="home big red icon"></i>
+      Archs
+    </a>
+    <div class="ui  right  menu">
+      
+        <a class="item" href="http://archs.github.io/categories/go">
+          <i class="folder icon"></i>
+          Go
+        </a>
+      
+        <a class="item" href="http://archs.github.io/categories/programdesign">
+          <i class="folder icon"></i>
+          Programdesign
+        </a>
+      
+        <a class="item" href="http://archs.github.io/categories/tips">
+          <i class="folder icon"></i>
+          Tips
+        </a>
+      
+        <a class="item" href="http://archs.github.io/categories/utils">
+          <i class="folder icon"></i>
+          Utils
+        </a>
+      
+      <a class="item" href="http://archs.github.io/about">
+         <i class="user icon"></i>
+        About
+      </a>
+      <a class="item" href="">
+        <i class="rss square yellow large icon"></i>RSS
+      </a>
+    </div>
+</div>
+        <div class="post">
+            <div class="post-title">
+                
+                    <div id="toc" class="ui basic right floated segment">
+                        <h4 class="ui header">Contents</h4>
+                        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#安装前准备:b5ab3f4ab51707d5e17af5dc5764c732">安装前准备</a></li>
+<li><a href="#安装:b5ab3f4ab51707d5e17af5dc5764c732">安装</a></li>
+<li><a href="#使用:b5ab3f4ab51707d5e17af5dc5764c732">使用</a></li>
+</ul></li>
+<li><a href="#enjoy-you-git-now:b5ab3f4ab51707d5e17af5dc5764c732">Enjoy you Git Now!</a></li>
+</ul>
+</nav>
+                    </div>
+                
+                <p class="footnote">
+                    <time class="">2013-04-11</time>
+		            
+                    
+                    |
+                    
+                    
+                    tags:<a href="http://archs.github.io/tags/hg">hg</a> <a href="http://archs.github.io/tags/git">git</a> <a href="http://archs.github.io/tags/python">python</a> 
+                    
+
+                    
+                    categories:<a href="http://archs.github.io/categories/tips">tips</a> 
+                    
+
+                    
+                </p>
+                <h1>使用hg访问git仓库</h1>
+                
+
+<p>hg用久了，觉得git命令很别扭，高级功能很少用到，速度差别基本上
+感觉不出来，哈，所以还是hg喽. 唯一的问题就在于Github，它不支持hg。
+好在hg有一个hggit的扩展，有一次感叹一下python的“batter included”！</p>
+
+<h2 id="安装前准备:b5ab3f4ab51707d5e17af5dc5764c732">安装前准备</h2>
+
+<p>Linux下面自然不用多说，Windows下面要注意几个问题</p>
+
+<ul>
+<li>删除Mercurial提供的exe或者mis安装过的独立版本</li>
+<li>安装有Mingw，当然你用msvc的话下面的就可以省略了，
+不过我还没有尝试过</li>
+
+<li><p>设置Python Disutils的默认编译器为Gcc
+进入 <code>PYTHON_HOME/Lib/distutils</code> 建立新文件 <code>distutils.cfg</code> 。
+输入以下内容：</p>
+
+<pre><code>[build]
+compiler=mingw32
+</code></pre></li>
+</ul>
+
+<h2 id="安装:b5ab3f4ab51707d5e17af5dc5764c732">安装</h2>
+
+<p>安装就简单了，使用 <code>easy_install</code> 或者 <code>pip</code> 直接</p>
+
+<pre><code>pip install mercurial
+pip install hg-git
+</code></pre>
+
+<p>然后配置hg加载hggit扩展，在用户目录下的 <code>.hgrc</code> 文件中加入</p>
+
+<pre><code>[extensions]
+bookmarks =
+hggit =
+</code></pre>
+
+<p>然后输入 <code>hg help</code> 就能看看到hggit已加载的输出</p>
+
+<pre><code>enabled extensions:
+
+hggit         push and pull from a Git server
+</code></pre>
+
+<h2 id="使用:b5ab3f4ab51707d5e17af5dc5764c732">使用</h2>
+
+<p>使用的时候就是普遍的hg的命令了，这是相当happy的。
+要注意的是git路径到hggit的转换，比如github中ssh方式访问
+<code>git@github.com:username/reposname.git</code> 要换成
+<code>git+ssh://git@github.com:username/reposname.git</code> 就可以了</p>
+
+<p>还有一个推送已有hg库到git库的方法：</p>
+
+<pre><code>$ cd hg-git # (a Mercurial repository)
+$ hg bookmark -r default master # make a bookmark of master for default, so a ref gets created
+$ hg push git+ssh://git@github.com/schacon/hg-git.git
+$ hg push
+</code></pre>
+
+<h1 id="enjoy-you-git-now:b5ab3f4ab51707d5e17af5dc5764c732">Enjoy you Git Now!</h1>
+
+            </div>
+
+            <div class="post-content">
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'archs';
+    var disqus_identifier = 'http:\/\/archs.github.io\/post\/hg4git\/';
+    var disqus_title = '使用hg访问git仓库';
+    var disqus_url = 'http:\/\/archs.github.io\/post\/hg4git\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+        </div>
+	</div>
+</div>
+
+
+
+
+<script src="http://archs.github.io/js/jquery.min.js" type="text/javascript"></script>
+<script src="http://archs.github.io/js/jquery.timeago.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+    $("time.timeago").timeago();
+  })
+</script>
+
+
+</body>
+</html>
+

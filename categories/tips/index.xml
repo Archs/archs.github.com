@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tips on Archs</title>
+    <link>http://archs.github.io/categories/tips/</link>
+    <description>Recent content in Tips on Archs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>archs@archs.tk (Archs)</managingEditor>
+    <webMaster>archs@archs.tk (Archs)</webMaster>
+    <lastBuildDate>Sat, 13 Jul 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://archs.github.io/categories/tips/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GIT的奇技淫巧--修改历史</title>
+      <link>http://archs.github.io/post/git-amend/</link>
+      <pubDate>Sat, 13 Jul 2013 00:00:00 +0000</pubDate>
+      <author>archs@archs.tk (Archs)</author>
+      <guid>http://archs.github.io/post/git-amend/</guid>
+      <description>&lt;p&gt;使用版本控制系统这么久，被GIT震惊了， 简直是无所不能啊，下面就是
+一个修改历史版本中所有用户信息的命令，叹为观止。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git filter-branch --commit-filter &#39;
+       if [ &amp;quot;$GIT_AUTHOR_EMAIL&amp;quot; = &amp;quot;previous@email.address&amp;quot; ];
+       then
+               GIT_AUTHOR_NAME=&amp;quot;NowName&amp;quot;;
+               GIT_AUTHOR_EMAIL=&amp;quot;now@email.address&amp;quot;;
+               git commit-tree &amp;quot;$@&amp;quot;;
+       else
+               git commit-tree &amp;quot;$@&amp;quot;;
+       fi&#39; HEAD
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用Mingw Build Lua 的注意事项</title>
+      <link>http://archs.github.io/post/mingw.build.lua/</link>
+      <pubDate>Fri, 05 Jul 2013 00:00:00 +0000</pubDate>
+      <author>archs@archs.tk (Archs)</author>
+      <guid>http://archs.github.io/post/mingw.build.lua/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Lua的扩展库使用LUA_LIB宏定义&lt;/p&gt;
+
+&lt;p&gt;在c文件中引入lua的头文件之前加入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#define LUA_LIB
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;使用windows库的时候，需要在gcc命令行中引入库的顺序&lt;/p&gt;
+
+&lt;p&gt;这样&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gcc -lwsock32 ws_c_file.c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可能会造成winsock函数未定义应用的问题，最好使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gcc ws_c_file.c -lwsock32 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个问题相当诡异，简直不知道怎么说是好。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>在TinyCore中取代BusyBox</title>
+      <link>http://archs.github.io/post/fullpowerTinyCore/</link>
+      <pubDate>Thu, 18 Apr 2013 00:00:00 +0000</pubDate>
+      <author>archs@archs.tk (Archs)</author>
+      <guid>http://archs.github.io/post/fullpowerTinyCore/</guid>
+      <description>&lt;p&gt;TinyCore为了最小化体积，使用BusyBox构建基本的Shell环境，所以不是
+完全的 &lt;code&gt;GNU compatible&lt;/code&gt; ，在编译软件的时候可能造成一定的困扰。如果
+在TinyCore下面编译软件遇到问题，可注意下兼容性问题。&lt;/p&gt;
+
+&lt;p&gt;使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tce-load -wo coreutils util-linux
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以OnDemand的方式安装 &lt;code&gt;coreutils&lt;/code&gt; 和 &lt;code&gt;util-linux&lt;/code&gt; ，下载必须软件包。
+使用的时候&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tce-load -i coreutils util-linux
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;即可。参见&lt;a href=&#34;http://tinycorelinux.net/faq.html#compatibility&#34;&gt;TinyCore Wiki&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用hg访问git仓库</title>
+      <link>http://archs.github.io/post/hg4git/</link>
+      <pubDate>Thu, 11 Apr 2013 00:00:00 +0000</pubDate>
+      <author>archs@archs.tk (Archs)</author>
+      <guid>http://archs.github.io/post/hg4git/</guid>
+      <description>
+
+&lt;p&gt;hg用久了，觉得git命令很别扭，高级功能很少用到，速度差别基本上
+感觉不出来，哈，所以还是hg喽. 唯一的问题就在于Github，它不支持hg。
+好在hg有一个hggit的扩展，有一次感叹一下python的“batter included”！&lt;/p&gt;
+
+&lt;h2 id=&#34;安装前准备:b5ab3f4ab51707d5e17af5dc5764c732&#34;&gt;安装前准备&lt;/h2&gt;
+
+&lt;p&gt;Linux下面自然不用多说，Windows下面要注意几个问题&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;删除Mercurial提供的exe或者mis安装过的独立版本&lt;/li&gt;
+&lt;li&gt;安装有Mingw，当然你用msvc的话下面的就可以省略了，
+不过我还没有尝试过&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设置Python Disutils的默认编译器为Gcc
+进入 &lt;code&gt;PYTHON_HOME/Lib/distutils&lt;/code&gt; 建立新文件 &lt;code&gt;distutils.cfg&lt;/code&gt; 。
+输入以下内容：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[build]
+compiler=mingw32
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;安装:b5ab3f4ab51707d5e17af5dc5764c732&#34;&gt;安装&lt;/h2&gt;
+
+&lt;p&gt;安装就简单了，使用 &lt;code&gt;easy_install&lt;/code&gt; 或者 &lt;code&gt;pip&lt;/code&gt; 直接&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pip install mercurial
+pip install hg-git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后配置hg加载hggit扩展，在用户目录下的 &lt;code&gt;.hgrc&lt;/code&gt; 文件中加入&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[extensions]
+bookmarks =
+hggit =
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后输入 &lt;code&gt;hg help&lt;/code&gt; 就能看看到hggit已加载的输出&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;enabled extensions:
+
+hggit         push and pull from a Git server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;使用:b5ab3f4ab51707d5e17af5dc5764c732&#34;&gt;使用&lt;/h2&gt;
+
+&lt;p&gt;使用的时候就是普遍的hg的命令了，这是相当happy的。
+要注意的是git路径到hggit的转换，比如github中ssh方式访问
+&lt;code&gt;git@github.com:username/reposname.git&lt;/code&gt; 要换成
+&lt;code&gt;git+ssh://git@github.com:username/reposname.git&lt;/code&gt; 就可以了&lt;/p&gt;
+
+&lt;p&gt;还有一个推送已有hg库到git库的方法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd hg-git # (a Mercurial repository)
+$ hg bookmark -r default master # make a bookmark of master for default, so a ref gets created
+$ hg push git+ssh://git@github.com/schacon/hg-git.git
+$ hg push
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;enjoy-you-git-now:b5ab3f4ab51707d5e17af5dc5764c732&#34;&gt;Enjoy you Git Now!&lt;/h1&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

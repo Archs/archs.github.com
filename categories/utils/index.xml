@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Utils on Archs</title>
+    <link>http://archs.github.io/categories/utils/</link>
+    <description>Recent content in Utils on Archs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>archs@archs.tk (Archs)</managingEditor>
+    <webMaster>archs@archs.tk (Archs)</webMaster>
+    <lastBuildDate>Tue, 05 Mar 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://archs.github.io/categories/utils/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>使用Markdown</title>
+      <link>http://archs.github.io/post/aboutMarkDown/</link>
+      <pubDate>Tue, 05 Mar 2013 00:00:00 +0000</pubDate>
+      <author>archs@archs.tk (Archs)</author>
+      <guid>http://archs.github.io/post/aboutMarkDown/</guid>
+      <description>
+
+&lt;p&gt;感觉比rst简单许多，链接的使用也没有那么多的麻烦。
+docutils是一个伟大的工具，但是有些 &lt;em&gt;繁琐&lt;/em&gt; 。细节的使用上
+比如插入图片，虽然可以定制格式但是调整起来还是很麻烦的。&lt;/p&gt;
+
+&lt;h1 id=&#34;简单的列表:d3e7e308df33aab0a4a2a0b1e938f271&#34;&gt;简单的列表&lt;/h1&gt;
+
+&lt;p&gt;关键是列表啊，md的列表很比rst好用一些&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;这是itme1&lt;/p&gt;
+
+&lt;p&gt;可插入一个段落，作为itme1的一个子段落，
+这在rst中让我遇到很多麻烦&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Item2&lt;/p&gt;
+
+&lt;p&gt;rst中的ordered list不能够被自段落分开，否则编号不连续
+最后使用的还是手写编号的形式，就跟md一样了&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;方便的标题:d3e7e308df33aab0a4a2a0b1e938f271&#34;&gt;方便的标题&lt;/h1&gt;
+
+&lt;p&gt;标题要简洁一些，而且没有要求下划线至少要不标题长，少了一些约束。&lt;/p&gt;
+
+&lt;h1 id=&#34;代码插入:d3e7e308df33aab0a4a2a0b1e938f271&#34;&gt;代码插入&lt;/h1&gt;
+
+&lt;p&gt;来段代码吧 :)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// New in version 2.6.
+func PyErr_WarnPy3k(message string, stacklevel int) error {
+    c_message := C.CString(message)
+    defer C.free(unsafe.Pointer(c_message))
+
+    return int2err(C._gopy_PyErr_WarnPy3k(c_message, C.int(stacklevel)))
+}
+
+// int PyErr_CheckSignals()
+func PyErr_CheckSignals() bool {
+    return int2bool(C.PyErr_CheckSignals())
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;markdown跟HTML的紧密结合，使网页的手动写作方便了许多。虽然在多种到处格式上比
+rst还是有些差距，但是用的机会毕竟不多。&lt;/p&gt;
+
+&lt;p&gt;想看教程的猛击这里&lt;a href=&#34;http://wowubuntu.com/markdown/&#34;&gt;Markdown中文版语法说明&lt;/a&gt; :)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

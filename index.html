@@ -1,0 +1,297 @@
+<html lang="en">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>Archs</title>
+  <meta name="description" content="Archs">
+  <meta name="author" content="Archs">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link href="http://archs.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Archs" />
+    <link href="http://archs.github.io/index.xml" rel="feed" type="application/rss+xml" title="Archs" />
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://archs.github.io/css/semantic.min.css">
+  
+
+    <link rel="stylesheet" href="http://archs.github.io/css/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="http://archs.github.io/css/custom.css">
+
+  
+  
+  <link rel="stylesheet" href="http://archs.github.io/js/highlight/styles/monokai.css">
+  
+  <script src="http://archs.github.io/js/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+
+
+<div class="ui centered grid">
+	<div class="twelve wide column">
+	  
+
+
+<div class="ui secondary  menu">
+    <a class="header item" href="http://archs.github.io/">
+      <i class="home big red icon"></i>
+      Archs
+    </a>
+    <div class="ui  right  menu">
+      
+        <a class="item" href="http://archs.github.io/categories/go">
+          <i class="folder icon"></i>
+          Go
+        </a>
+      
+        <a class="item" href="http://archs.github.io/categories/programdesign">
+          <i class="folder icon"></i>
+          Programdesign
+        </a>
+      
+        <a class="item" href="http://archs.github.io/categories/tips">
+          <i class="folder icon"></i>
+          Tips
+        </a>
+      
+        <a class="item" href="http://archs.github.io/categories/utils">
+          <i class="folder icon"></i>
+          Utils
+        </a>
+      
+      <a class="item" href="http://archs.github.io/about">
+         <i class="user icon"></i>
+        About
+      </a>
+      <a class="item" href="http://archs.github.io/index.xml">
+        <i class="rss square yellow large icon"></i>RSS
+      </a>
+    </div>
+</div>
+	  <ul class="posts">
+		
+		
+		<li>
+		  <a class="ui large header" href="http://archs.github.io/post/lua.graph/">Lua画图软件</a>
+
+		  <p class="footnote">
+			submitted <time datetime="2013-07-15T00:00:00Z" class="post-list timeago">2013-07-15T00:00:00Z</time>
+
+			
+			to
+			
+
+			
+				tags:[ 
+					
+						<a href="http://archs.github.io/tags/lua">Lua</a> 
+					
+						<a href="http://archs.github.io/tags/graph">graph</a> 
+					
+						<a href="http://archs.github.io/tags/script">script</a> 
+					
+				]
+			
+
+			
+
+			
+		  </p>
+			<div>
+	<p>在网上看到一篇文章 <a href="http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html">用Lua画二元方程</a>，很有意思。</p>
+
+<p>作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。</p>
+
+<p>这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序:</p>
+ <a href="http://archs.github.io/post/lua.graph/"> Read more → </a>
+</div>
+		</li>
+		
+		<li>
+		  <a class="ui large header" href="http://archs.github.io/post/git-amend/">GIT的奇技淫巧--修改历史</a>
+
+		  <p class="footnote">
+			submitted <time datetime="2013-07-13T00:00:00Z" class="post-list timeago">2013-07-13T00:00:00Z</time>
+
+			
+			to
+			
+
+			
+				tags:[ 
+					
+						<a href="http://archs.github.io/tags/git">git</a> 
+					
+				]
+			
+
+			
+			categories:[ 
+					
+						<a href="http://archs.github.io/categories/tips">tips</a> 
+					
+				]
+			
+
+			
+		  </p>
+			<div>
+	<p>使用版本控制系统这么久，被GIT震惊了， 简直是无所不能啊，下面就是
+一个修改历史版本中所有用户信息的命令，叹为观止。</p>
+ <a href="http://archs.github.io/post/git-amend/"> Read more → </a>
+</div>
+		</li>
+		
+		<li>
+		  <a class="ui large header" href="http://archs.github.io/post/mingw.build.lua/">使用Mingw Build Lua 的注意事项</a>
+
+		  <p class="footnote">
+			submitted <time datetime="2013-07-05T00:00:00Z" class="post-list timeago">2013-07-05T00:00:00Z</time>
+
+			
+			to
+			
+
+			
+				tags:[ 
+					
+						<a href="http://archs.github.io/tags/lua">Lua</a> 
+					
+						<a href="http://archs.github.io/tags/mingw">Mingw</a> 
+					
+						<a href="http://archs.github.io/tags/gcc">gcc</a> 
+					
+				]
+			
+
+			
+			categories:[ 
+					
+						<a href="http://archs.github.io/categories/tips">tips</a> 
+					
+				]
+			
+
+			
+		  </p>
+			<div>
+	Lua的扩展库使用LUA_LIB宏定义 在c文件中引入lua的头文件之前加入： #define LUA_LIB 使用windows库的时候，需要在gcc命令行中引入库的顺序 这样 gcc -lwsock32 ws_c_file.c 可能会造成winsock函数未定义应用的问题，最好使用 gcc ws_c_file.c -lwsock32 这个问题相当诡异，简直不知道怎么说是好。 <a href="http://archs.github.io/post/mingw.build.lua/"> Read more → </a>
+</div>
+		</li>
+		
+		<li>
+		  <a class="ui large header" href="http://archs.github.io/post/dsl/">DSL的模式和方法</a>
+
+		  <p class="footnote">
+			submitted <time datetime="2013-05-29T00:00:00Z" class="post-list timeago">2013-05-29T00:00:00Z</time>
+
+			
+			to
+			
+
+			
+				tags:[ 
+					
+						<a href="http://archs.github.io/tags/dsl">DSL</a> 
+					
+						<a href="http://archs.github.io/tags/lisp">Lisp</a> 
+					
+						<a href="http://archs.github.io/tags/go">Go</a> 
+					
+				]
+			
+
+			
+			categories:[ 
+					
+						<a href="http://archs.github.io/categories/programdesign">ProgramDesign</a> 
+					
+				]
+			
+
+			
+		  </p>
+			<div>
+	<p>最近研究Lisp，对Domain Specific Language很是产生了一些兴趣。</p>
+
+<p>James Gosling曾经说过： <code>每个配置文件最终都会变成一门编程语言。</code> 这大概是
+DSL之所以兴起和引人关注的一点吧。另外Martin Fowler在[《领域特定语言》][]中
+强调了与领域专家的沟通作为DSL的一个主要优点和设计出发点。</p>
+
+<p>广义的说HTML之于服务后端的业务逻辑实现和。net中XAML对于C#的代码来说都是
+一种具体的DSL，所以说DSL促成了或者达到了UI和业务分离也不为过，这实际上
+可以认为是领域专家（UI设计师）沟通的延伸，但是达成的效果是实实在在的。
+上面举到的两个例子跟XML的关系是非同一般的紧密，同时也说了XML作为DSL载体
+的优势。</p>
+ <a href="http://archs.github.io/post/dsl/"> Read more → </a>
+</div>
+		</li>
+		
+		<li>
+		  <a class="ui large header" href="http://archs.github.io/post/fullpowerTinyCore/">在TinyCore中取代BusyBox</a>
+
+		  <p class="footnote">
+			submitted <time datetime="2013-04-18T00:00:00Z" class="post-list timeago">2013-04-18T00:00:00Z</time>
+
+			
+			to
+			
+
+			
+				tags:[ 
+					
+						<a href="http://archs.github.io/tags/tinycore">TinyCore</a> 
+					
+						<a href="http://archs.github.io/tags/linux">Linux</a> 
+					
+				]
+			
+
+			
+			categories:[ 
+					
+						<a href="http://archs.github.io/categories/tips">tips</a> 
+					
+				]
+			
+
+			
+		  </p>
+			<div>
+	<p>TinyCore为了最小化体积，使用BusyBox构建基本的Shell环境，所以不是
+完全的 <code>GNU compatible</code> ，在编译软件的时候可能造成一定的困扰。如果
+在TinyCore下面编译软件遇到问题，可注意下兼容性问题。</p>
+ <a href="http://archs.github.io/post/fullpowerTinyCore/"> Read more → </a>
+</div>
+		</li>
+		
+	  </ul>
+	</div>
+</div>
+
+
+
+
+<script src="http://archs.github.io/js/jquery.min.js" type="text/javascript"></script>
+<script src="http://archs.github.io/js/jquery.timeago.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+    $("time.timeago").timeago();
+  })
+</script>
+
+
+</body>
+</html>
+

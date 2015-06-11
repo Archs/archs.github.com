@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chicken on Archs</title>
+    <link>http://archs.github.io/tags/chicken/</link>
+    <description>Recent content in Chicken on Archs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>archs@archs.tk (Archs)</managingEditor>
+    <webMaster>archs@archs.tk (Archs)</webMaster>
+    <lastBuildDate>Wed, 10 Apr 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://archs.github.io/tags/chicken/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Embed ChickenScheme In Go</title>
+      <link>http://archs.github.io/post/goschicken/</link>
+      <pubDate>Wed, 10 Apr 2013 00:00:00 +0000</pubDate>
+      <author>archs@archs.tk (Archs)</author>
+      <guid>http://archs.github.io/post/goschicken/</guid>
+      <description>&lt;p&gt;使用cgo加载c库的主要麻烦在于cgo不识别c头文件中的宏
+而chicken scheme初始化的时候要调用一个全局函数CHICKEN_default_toplevel。
+在cgo中使用 &lt;code&gt;void* dfp = CHICKEN_default_toplevel;&lt;/code&gt; 可以直接声明。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+/*
+#cgo windows CFLAGS: -D_GUN_SOURCE -I&amp;quot;c:/my-chicken/include/chicken&amp;quot; -DHAVE_CHICKEN_CONFIG_H -DC_ENABLE_PTABLES
+#cgo windows LDFLAGS: -L&amp;quot;c:/my-chicken/lib&amp;quot; -lchicken -lm
+
+#include &amp;lt;chicken.h&amp;gt;
+
+void* dfp = CHICKEN_default_toplevel;
+*/
+import &amp;quot;C&amp;quot;
+import (
+    &amp;quot;unsafe&amp;quot;
+)
+
+func main() {
+    src := &amp;quot;(+ 1 2 3)&amp;quot;
+    nSrc := 10
+    ret := make([]byte, nSrc)
+    p := (*C.char)(unsafe.Pointer(&amp;amp;ret[0]))
+    C.CHICKEN_run(C.dfp)
+    C.CHICKEN_eval_string_to_string(C.CString(src), p, C.int(nSrc))
+    println(string(ret))
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最近才发现，cgo不仅可以识别注释中的c语句，对于相同目录下面的*.c文件也可
+自动编译，呵呵，像sqlite之类的库就可以静态的形式直接使用了。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
