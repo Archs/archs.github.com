@@ -21,54 +21,43 @@
   
   
   <link rel="stylesheet" href="http://archs.github.io/css/semantic.min.css">
-  
-
-    <link rel="stylesheet" href="http://archs.github.io/css/grids-responsive-min.css">
-
   <link rel="stylesheet" href="http://archs.github.io/css/custom.css">
 
   
   
   <link rel="stylesheet" href="http://archs.github.io/js/highlight/styles/monokai.css">
   
-  <script src="http://archs.github.io/js/highlight/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
 </head>
 <body>
 
 
 <div class="ui centered grid">
-	<div class="twelve wide column">
-	  
+	<div class="twelve wide column ui segment">
+	    
 
 
-<div class="ui secondary  menu">
+<div class="ui secondary borderless menu">
     <a class="header item" href="http://archs.github.io/">
       <i class="home big red icon"></i>
       Archs
     </a>
     <div class="ui  right  menu">
       
-        <a class="item" href="http://archs.github.io/categories/go">
-          <i class="folder icon"></i>
-          Go
-        </a>
+        
       
-        <a class="item" href="http://archs.github.io/categories/programdesign">
-          <i class="folder icon"></i>
-          Programdesign
-        </a>
+        
+          <a class="item" href="http://archs.github.io/blog">
+            <i class="folder icon"></i>
+            Blog
+          </a>
+        
       
-        <a class="item" href="http://archs.github.io/categories/tips">
-          <i class="folder icon"></i>
-          Tips
-        </a>
-      
-        <a class="item" href="http://archs.github.io/categories/utils">
-          <i class="folder icon"></i>
-          Utils
-        </a>
+        
+          <a class="item" href="http://archs.github.io/gopherjs">
+            <i class="folder icon"></i>
+            Gopherjs
+          </a>
+        
       
       <a class="item" href="http://archs.github.io/about">
          <i class="user icon"></i>
@@ -79,150 +68,224 @@
       </a>
     </div>
 </div>
-	  <ul class="posts">
+	    <h5 class="ui header">Recent Posts:</h5>
+	    <ul class="posts">
+		  	
+		  	
+		  	<li>
+		  		<h1 class="ui header">
+	<a href="http://archs.github.io/gopherjs/canvasparticls/">Canvas Particles Using Gopherjs</a>
+</h1>	
+<footer class="footnote">
+	submitted <time datetime="2015-06-11T16:51:59&#43;08:00" class="post-list timeago">2015-06-11T16:51:59&#43;08:00</time>
+
+	
+
+
+	to
+
+
+
+	tags:[ 
 		
+			<a href="http://archs.github.io/tags/gopherjs">Gopherjs</a> 
 		
-		<li>
-		  <a class="ui large header" href="http://archs.github.io/post/lua.graph/">Lua画图软件</a>
+			<a href="http://archs.github.io/tags/golang">golang</a> 
+		
+	]
 
-		  <p class="footnote">
-			submitted <time datetime="2013-07-15T00:00:00Z" class="post-list timeago">2013-07-15T00:00:00Z</time>
 
-			
-			to
-			
 
+	categories:[ 
 			
-				tags:[ 
-					
-						<a href="http://archs.github.io/tags/lua">Lua</a> 
-					
-						<a href="http://archs.github.io/tags/graph">graph</a> 
-					
-						<a href="http://archs.github.io/tags/script">script</a> 
-					
-				]
+				<a href="http://archs.github.io/categories/development">Development</a> 
 			
+				<a href="http://archs.github.io/categories/golang">GoLang</a> 
+			
+		]
 
-			
 
-			
-		  </p>
-			<div>
+
+</footer>
+		  		<div>
+	<p>使用 <em>Gopherjs</em> 模拟的简单粒子系统，例子的来源是 <a href="http://soulwire.github.io/sketch.js/examples/particles.html">sketch.js</a>.</p>
+
+<p>在不熟悉Javascript的情况下使用Gopherjs写HTML5应用，还是很有爽的！大部分的Golang绝大部分
+基本库（除了os和syscall的部分功能）在Gopherjs中是直接可用的，见<a href="https://github.com/gopherjs/gopherjs/blob/master/doc/packages.md">兼容性列表</a>。</p>
+
+<p><code>Golang</code>的类型系统比<code>Javascript</code>直观的多，而且代码结构也要清爽许多。 :)</p>
+
+<p>但是也有些需要注意的问题：</p>
+
+<ol>
+<li><code>Javascript</code>是弱类型的，所以和<code>JS</code>交互的时候，数字类型需要注意</li>
+
+<li><p>interface目前在<code>Gopherjs</code>与<code>JS</code>的交互中支持的不是很好</p>
+
+<p>如果interface类型在<code>JS</code>（一般来讲是js的各种库）和<code>Gopherjs</code>之间传递，结果往往出于预料之外。
+但是在不和<code>JS</code>交互的代码中使用是没有问题的。</p></li>
+
+<li><p><code>Gopherjs</code>生成的代码尺寸比较大</p>
+
+<p>如果对js文件的大小没什么严苛的需求，做做Demo和演示，在Web中使用 <em>Gopherjs</em></p></li>
+</ol>
+ <a href="http://archs.github.io/gopherjs/canvasparticls/"> Read more → </a>
+</div>
+		  	</li>
+		  	
+		  	<li>
+		  		<h1 class="ui header">
+	<a href="http://archs.github.io/blog/lua.graph/">Lua画图软件</a>
+</h1>	
+<footer class="footnote">
+	submitted <time datetime="2013-07-15T00:00:00Z" class="post-list timeago">2013-07-15T00:00:00Z</time>
+
+	
+
+
+	to
+
+
+
+	tags:[ 
+		
+			<a href="http://archs.github.io/tags/lua">Lua</a> 
+		
+			<a href="http://archs.github.io/tags/graph">graph</a> 
+		
+			<a href="http://archs.github.io/tags/script">script</a> 
+		
+	]
+
+
+
+
+
+</footer>
+		  		<div>
 	<p>在网上看到一篇文章 <a href="http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html">用Lua画二元方程</a>，很有意思。</p>
 
 <p>作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。</p>
 
 <p>这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序:</p>
- <a href="http://archs.github.io/post/lua.graph/"> Read more → </a>
+ <a href="http://archs.github.io/blog/lua.graph/"> Read more → </a>
 </div>
-		</li>
+		  	</li>
+		  	
+		  	<li>
+		  		<h1 class="ui header">
+	<a href="http://archs.github.io/blog/git-amend/">GIT的奇技淫巧--修改历史</a>
+</h1>	
+<footer class="footnote">
+	submitted <time datetime="2013-07-13T00:00:00Z" class="post-list timeago">2013-07-13T00:00:00Z</time>
+
+	
+
+
+	to
+
+
+
+	tags:[ 
 		
-		<li>
-		  <a class="ui large header" href="http://archs.github.io/post/git-amend/">GIT的奇技淫巧--修改历史</a>
+			<a href="http://archs.github.io/tags/git">git</a> 
+		
+	]
 
-		  <p class="footnote">
-			submitted <time datetime="2013-07-13T00:00:00Z" class="post-list timeago">2013-07-13T00:00:00Z</time>
 
-			
-			to
-			
 
+	categories:[ 
 			
-				tags:[ 
-					
-						<a href="http://archs.github.io/tags/git">git</a> 
-					
-				]
+				<a href="http://archs.github.io/categories/tips">tips</a> 
 			
+		]
 
-			
-			categories:[ 
-					
-						<a href="http://archs.github.io/categories/tips">tips</a> 
-					
-				]
-			
 
-			
-		  </p>
-			<div>
+
+</footer>
+		  		<div>
 	<p>使用版本控制系统这么久，被GIT震惊了， 简直是无所不能啊，下面就是
 一个修改历史版本中所有用户信息的命令，叹为观止。</p>
- <a href="http://archs.github.io/post/git-amend/"> Read more → </a>
+ <a href="http://archs.github.io/blog/git-amend/"> Read more → </a>
 </div>
-		</li>
+		  	</li>
+		  	
+		  	<li>
+		  		<h1 class="ui header">
+	<a href="http://archs.github.io/blog/mingw.build.lua/">使用Mingw Build Lua 的注意事项</a>
+</h1>	
+<footer class="footnote">
+	submitted <time datetime="2013-07-05T00:00:00Z" class="post-list timeago">2013-07-05T00:00:00Z</time>
+
+	
+
+
+	to
+
+
+
+	tags:[ 
 		
-		<li>
-		  <a class="ui large header" href="http://archs.github.io/post/mingw.build.lua/">使用Mingw Build Lua 的注意事项</a>
+			<a href="http://archs.github.io/tags/lua">Lua</a> 
+		
+			<a href="http://archs.github.io/tags/mingw">Mingw</a> 
+		
+			<a href="http://archs.github.io/tags/gcc">gcc</a> 
+		
+	]
 
-		  <p class="footnote">
-			submitted <time datetime="2013-07-05T00:00:00Z" class="post-list timeago">2013-07-05T00:00:00Z</time>
 
-			
-			to
-			
 
+	categories:[ 
 			
-				tags:[ 
-					
-						<a href="http://archs.github.io/tags/lua">Lua</a> 
-					
-						<a href="http://archs.github.io/tags/mingw">Mingw</a> 
-					
-						<a href="http://archs.github.io/tags/gcc">gcc</a> 
-					
-				]
+				<a href="http://archs.github.io/categories/tips">tips</a> 
 			
+		]
 
-			
-			categories:[ 
-					
-						<a href="http://archs.github.io/categories/tips">tips</a> 
-					
-				]
-			
 
-			
-		  </p>
-			<div>
-	Lua的扩展库使用LUA_LIB宏定义 在c文件中引入lua的头文件之前加入： #define LUA_LIB 使用windows库的时候，需要在gcc命令行中引入库的顺序 这样 gcc -lwsock32 ws_c_file.c 可能会造成winsock函数未定义应用的问题，最好使用 gcc ws_c_file.c -lwsock32 这个问题相当诡异，简直不知道怎么说是好。 <a href="http://archs.github.io/post/mingw.build.lua/"> Read more → </a>
+
+</footer>
+		  		<div>
+	Lua的扩展库使用LUA_LIB宏定义 在c文件中引入lua的头文件之前加入： #define LUA_LIB 使用windows库的时候，需要在gcc命令行中引入库的顺序 这样 gcc -lwsock32 ws_c_file.c 可能会造成winsock函数未定义应用的问题，最好使用 gcc ws_c_file.c -lwsock32 这个问题相当诡异，简直不知道怎么说是好。 <a href="http://archs.github.io/blog/mingw.build.lua/"> Read more → </a>
 </div>
-		</li>
+		  	</li>
+		  	
+		  	<li>
+		  		<h1 class="ui header">
+	<a href="http://archs.github.io/blog/dsl/">DSL的模式和方法</a>
+</h1>	
+<footer class="footnote">
+	submitted <time datetime="2013-05-29T00:00:00Z" class="post-list timeago">2013-05-29T00:00:00Z</time>
+
+	
+
+
+	to
+
+
+
+	tags:[ 
 		
-		<li>
-		  <a class="ui large header" href="http://archs.github.io/post/dsl/">DSL的模式和方法</a>
+			<a href="http://archs.github.io/tags/dsl">DSL</a> 
+		
+			<a href="http://archs.github.io/tags/lisp">Lisp</a> 
+		
+			<a href="http://archs.github.io/tags/go">Go</a> 
+		
+	]
 
-		  <p class="footnote">
-			submitted <time datetime="2013-05-29T00:00:00Z" class="post-list timeago">2013-05-29T00:00:00Z</time>
 
-			
-			to
-			
 
+	categories:[ 
 			
-				tags:[ 
-					
-						<a href="http://archs.github.io/tags/dsl">DSL</a> 
-					
-						<a href="http://archs.github.io/tags/lisp">Lisp</a> 
-					
-						<a href="http://archs.github.io/tags/go">Go</a> 
-					
-				]
+				<a href="http://archs.github.io/categories/programdesign">ProgramDesign</a> 
 			
+		]
 
-			
-			categories:[ 
-					
-						<a href="http://archs.github.io/categories/programdesign">ProgramDesign</a> 
-					
-				]
-			
 
-			
-		  </p>
-			<div>
+
+</footer>
+		  		<div>
 	<p>最近研究Lisp，对Domain Specific Language很是产生了一些兴趣。</p>
 
 <p>James Gosling曾经说过： <code>每个配置文件最终都会变成一门编程语言。</code> 这大概是
@@ -234,52 +297,20 @@ DSL之所以兴起和引人关注的一点吧。另外Martin Fowler在[《领域
 可以认为是领域专家（UI设计师）沟通的延伸，但是达成的效果是实实在在的。
 上面举到的两个例子跟XML的关系是非同一般的紧密，同时也说了XML作为DSL载体
 的优势。</p>
- <a href="http://archs.github.io/post/dsl/"> Read more → </a>
+ <a href="http://archs.github.io/blog/dsl/"> Read more → </a>
 </div>
-		</li>
-		
-		<li>
-		  <a class="ui large header" href="http://archs.github.io/post/fullpowerTinyCore/">在TinyCore中取代BusyBox</a>
-
-		  <p class="footnote">
-			submitted <time datetime="2013-04-18T00:00:00Z" class="post-list timeago">2013-04-18T00:00:00Z</time>
-
-			
-			to
-			
-
-			
-				tags:[ 
-					
-						<a href="http://archs.github.io/tags/tinycore">TinyCore</a> 
-					
-						<a href="http://archs.github.io/tags/linux">Linux</a> 
-					
-				]
-			
-
-			
-			categories:[ 
-					
-						<a href="http://archs.github.io/categories/tips">tips</a> 
-					
-				]
-			
-
-			
-		  </p>
-			<div>
-	<p>TinyCore为了最小化体积，使用BusyBox构建基本的Shell环境，所以不是
-完全的 <code>GNU compatible</code> ，在编译软件的时候可能造成一定的困扰。如果
-在TinyCore下面编译软件遇到问题，可注意下兼容性问题。</p>
- <a href="http://archs.github.io/post/fullpowerTinyCore/"> Read more → </a>
-</div>
-		</li>
-		
-	  </ul>
+		  	</li>
+		  	
+	    </ul>
 	</div>
 </div>
 
+
+<div class="ui centered grid">
+    <div class="twelve wide column ui basic segment">
+    © 2013-15 Archs. All rights reserved; Powered by <a href="http://gohugo.io/">Hugo</a> . Hosted by <a href="http://github.com" title="Github">Github</a> .
+    </div>
+</div>
 
 
 
@@ -290,6 +321,9 @@ DSL之所以兴起和引人关注的一点吧。另外Martin Fowler在[《领域
     $("time.timeago").timeago();
   })
 </script>
+<script src="http://archs.github.io/js/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 
 
 </body>

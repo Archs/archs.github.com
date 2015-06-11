@@ -8,15 +8,187 @@
     <language>en-us</language>
     <managingEditor>archs@archs.tk (Archs)</managingEditor>
     <webMaster>archs@archs.tk (Archs)</webMaster>
-    <lastBuildDate>Mon, 15 Jul 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2015 16:51:59 +0800</lastBuildDate>
     <atom:link href="http://archs.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Canvas Particles Using Gopherjs</title>
+      <link>http://archs.github.io/gopherjs/canvasparticls/</link>
+      <pubDate>Thu, 11 Jun 2015 16:51:59 +0800</pubDate>
+      <author>archs@archs.tk (Archs)</author>
+      <guid>http://archs.github.io/gopherjs/canvasparticls/</guid>
+      <description>&lt;p&gt;使用 &lt;em&gt;Gopherjs&lt;/em&gt; 模拟的简单粒子系统，例子的来源是 &lt;a href=&#34;http://soulwire.github.io/sketch.js/examples/particles.html&#34;&gt;sketch.js&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;在不熟悉Javascript的情况下使用Gopherjs写HTML5应用，还是很有爽的！大部分的Golang绝大部分
+基本库（除了os和syscall的部分功能）在Gopherjs中是直接可用的，见&lt;a href=&#34;https://github.com/gopherjs/gopherjs/blob/master/doc/packages.md&#34;&gt;兼容性列表&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Golang&lt;/code&gt;的类型系统比&lt;code&gt;Javascript&lt;/code&gt;直观的多，而且代码结构也要清爽许多。 :)&lt;/p&gt;
+
+&lt;p&gt;但是也有些需要注意的问题：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Javascript&lt;/code&gt;是弱类型的，所以和&lt;code&gt;JS&lt;/code&gt;交互的时候，数字类型需要注意&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;interface目前在&lt;code&gt;Gopherjs&lt;/code&gt;与&lt;code&gt;JS&lt;/code&gt;的交互中支持的不是很好&lt;/p&gt;
+
+&lt;p&gt;如果interface类型在&lt;code&gt;JS&lt;/code&gt;（一般来讲是js的各种库）和&lt;code&gt;Gopherjs&lt;/code&gt;之间传递，结果往往出于预料之外。
+但是在不和&lt;code&gt;JS&lt;/code&gt;交互的代码中使用是没有问题的。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Gopherjs&lt;/code&gt;生成的代码尺寸比较大&lt;/p&gt;
+
+&lt;p&gt;如果对js文件的大小没什么严苛的需求，做做Demo和演示，在Web中使用 &lt;em&gt;Gopherjs&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Go&#34;&gt;package main
+
+import (
+    &amp;quot;github.com/Archs/js/canvas&amp;quot;
+    &amp;quot;github.com/Archs/js/dom&amp;quot;
+    &amp;quot;github.com/Archs/js/raf&amp;quot;
+    &amp;quot;math&amp;quot;
+    &amp;quot;math/rand&amp;quot;
+    &amp;quot;strconv&amp;quot;
+)
+
+const (
+    MAX_PARTICLES = 280
+)
+
+var (
+    COLOURS = []string{&amp;quot;#69D2E7&amp;quot;, &amp;quot;#A7DBD8&amp;quot;, &amp;quot;#E0E4CC&amp;quot;, &amp;quot;#F38630&amp;quot;, &amp;quot;#FA6900&amp;quot;, &amp;quot;#FF4E50&amp;quot;, &amp;quot;#F9D423&amp;quot;}
+    ctx     *canvas.Context2D
+    cw, ch  float64
+    counter = 0
+    ps      = []*Particle{}
+    pool    = []*Particle{}
+)
+
+type Particle struct {
+    *canvas.Context2D
+    x, y    float64
+    vx, vy  float64
+    radius  float64
+    theta   float64
+    force   float64
+    damping float64
+    color   string
+}
+
+func getParticle(x, y float64) *Particle {
+    var p *Particle
+    if len(ps) &amp;gt;= MAX_PARTICLES {
+        pool = append(pool, ps[0])
+        ps = ps[1:]
+    }
+    if len(pool) &amp;gt; 0 {
+        p = pool[0]
+        pool = pool[1:]
+    } else {
+        p = &amp;amp;Particle{
+            Context2D: ctx,
+        }
+    }
+    p.init(x, y)
+    return p
+}
+
+func (p *Particle) init(x, y float64) {
+    p.x = x
+    p.y = y
+    p.radius = 5 + 35*rand.Float64()
+    p.theta = 2 * math.Pi * rand.Float64()
+    p.force = 2 + 8*rand.Float64()
+    p.damping = 0.9 + 0.1*rand.Float64()
+    p.color = COLOURS[rand.Intn(7)]
+    p.vx = p.force * math.Sin(p.theta)
+    p.vy = p.force * math.Cos(p.theta)
+}
+
+func (p *Particle) isAlive() bool {
+    return p.radius &amp;gt; 0.5
+}
+
+func (g *Particle) update() {
+    // update
+    g.radius *= 0.93
+    g.x += g.vx
+    g.y += g.vy
+    // g.theta += (0.5 - rand.Float64()) * 0.15
+    g.vx *= g.damping
+    g.vy *= g.damping
+    g.vx += (math.Sin(g.theta) * 0.1)
+    g.vy += (math.Cos(g.theta) * 0.1)
+    // g.vx += (rand.Float64() * 0.1)
+    // g.vy += (rand.Float64() * 0.1)
+}
+
+func (g *Particle) draw(t float64) {
+    // for canvas
+    g.BeginPath()
+    g.Arc(g.x, g.y, g.radius, 0, math.Pi*2, true)
+    g.FillStyle = g.color
+    g.Fill()
+}
+
+func run(t float64) {
+    raf.RequestAnimationFrame(run)
+    counter += 1
+    // frame control
+    if counter%2 == 0 {
+        return
+    }
+    // update &amp;amp; draw all the particles
+    ctx.ClearRect(0, 0, cw, ch)
+    for i := len(ps) - 1; i &amp;gt;= 0; i-- {
+        p := ps[i]
+        p.update()
+        if !p.isAlive() {
+            ps = append(ps[:i], ps[i+1:]...)
+        } else {
+            p.draw(t)
+        }
+    }
+}
+
+func makeParticles(x, y float64, n int) {
+    for i := 0; i &amp;lt; rand.Intn(n); i++ {
+        p := getParticle(x, y)
+        ps = append(ps, p)
+    }
+}
+
+func main() {
+    dom.OnDOMContentLoaded(func() {
+        s := dom.GetElementById(&amp;quot;gopherjs&amp;quot;)
+        style := dom.GetComputedStyle(s)
+
+        el := canvas.New(dom.CreateElement(&amp;quot;canvas&amp;quot;).Object)
+        cw, _ = strconv.ParseFloat(style.GetPropertyValue(&amp;quot;width&amp;quot;)[:3], 64)
+        ch, _ = strconv.ParseFloat(style.GetPropertyValue(&amp;quot;height&amp;quot;)[:3], 64)
+        el.Width = int(cw)
+        el.Height = int(ch)
+        el.AddEventListener(dom.EvtMousemove, func(e *dom.Event) {
+            e.PreventDefault()
+            x := float64(e.LayerX)
+            y := float64(e.LayerY)
+            makeParticles(x, y, 5)
+        })
+        ctx = el.GetContext2D()
+        ctx.GlobalCompositeOperation = canvas.CompositeLighter
+        s.AppendChild(el.Element)
+        raf.RequestAnimationFrame(run)
+    })
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Lua画图软件</title>
-      <link>http://archs.github.io/post/lua.graph/</link>
+      <link>http://archs.github.io/blog/lua.graph/</link>
       <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
-      <guid>http://archs.github.io/post/lua.graph/</guid>
+      <guid>http://archs.github.io/blog/lua.graph/</guid>
       <description>&lt;p&gt;在网上看到一篇文章 &lt;a href=&#34;http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html&#34;&gt;用Lua画二元方程&lt;/a&gt;，很有意思。&lt;/p&gt;
 
 &lt;p&gt;作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。&lt;/p&gt;
@@ -285,10 +457,10 @@ iup.MainLoop()
     
     <item>
       <title>GIT的奇技淫巧--修改历史</title>
-      <link>http://archs.github.io/post/git-amend/</link>
+      <link>http://archs.github.io/blog/git-amend/</link>
       <pubDate>Sat, 13 Jul 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
-      <guid>http://archs.github.io/post/git-amend/</guid>
+      <guid>http://archs.github.io/blog/git-amend/</guid>
       <description>&lt;p&gt;使用版本控制系统这么久，被GIT震惊了， 简直是无所不能啊，下面就是
 一个修改历史版本中所有用户信息的命令，叹为观止。&lt;/p&gt;
 
@@ -307,10 +479,10 @@ iup.MainLoop()
     
     <item>
       <title>使用Mingw Build Lua 的注意事项</title>
-      <link>http://archs.github.io/post/mingw.build.lua/</link>
+      <link>http://archs.github.io/blog/mingw.build.lua/</link>
       <pubDate>Fri, 05 Jul 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
-      <guid>http://archs.github.io/post/mingw.build.lua/</guid>
+      <guid>http://archs.github.io/blog/mingw.build.lua/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Lua的扩展库使用LUA_LIB宏定义&lt;/p&gt;
 
@@ -338,10 +510,10 @@ iup.MainLoop()
     
     <item>
       <title>DSL的模式和方法</title>
-      <link>http://archs.github.io/post/dsl/</link>
+      <link>http://archs.github.io/blog/dsl/</link>
       <pubDate>Wed, 29 May 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
-      <guid>http://archs.github.io/post/dsl/</guid>
+      <guid>http://archs.github.io/blog/dsl/</guid>
       <description>
 
 &lt;p&gt;最近研究Lisp，对Domain Specific Language很是产生了一些兴趣。&lt;/p&gt;
@@ -417,7 +589,7 @@ Literal Map都是大有帮助的语法糖，所以在面向对象和动态类型
 
 &lt;p&gt;这种方式就要借助于宿主语言的实现方式了，支持Literal Map在脚本语言里很常见，
 最近主流的静态类型语言也开始支持了，比如C#和Go。 在Go语言中这是一个很好的
-特性，下面这段代码引自 &lt;em&gt;Go语言的Windows GUI项目[Walk][]&lt;/em&gt;&lt;/p&gt;
+特性，下面这段代码引自 &lt;em&gt;Go语言的Windows GUI项目&lt;a href=&#34;https://github.com/lxn/walk/blob/master/examples/actions/actions.go&#34;&gt;Walk&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;MainWindow{
 AssignTo: &amp;amp;mw。MainWindow，
@@ -461,7 +633,7 @@ MenuItems: []MenuItem{
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;这段代码用[Walk][]的说法是 &lt;em&gt;Declarative(声明式)&lt;/em&gt; 的，但是正好使用了
+&lt;p&gt;这段代码用&lt;a href=&#34;https://github.com/lxn/walk/blob/master/examples/actions/actions.go&#34;&gt;Walk&lt;/a&gt;的说法是 &lt;em&gt;Declarative(声明式)&lt;/em&gt; 的，但是正好使用了
 DSL中Literal Map的形式，其本身也是Go中的Literal Map。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -486,17 +658,15 @@ DSL中Literal Map的形式，其本身也是Go中的Literal Map。&lt;/p&gt;&lt;
 实现。 产生式规则，看起来简单，却是一个水很深的领域，早期的人工智能和应用着重
 研究专家系统，而产生式系统是专家系统的基石。不过往简单的方面来考虑，使用决策树
 来做产生式规则还是很直观的。&lt;/p&gt;
-
-&lt;p&gt;[Walk]:&lt;a href=&#34;https://github.com/lxn/walk/blob/master/examples/actions/actions.go&#34;&gt;https://github.com/lxn/walk/blob/master/examples/actions/actions.go&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>在TinyCore中取代BusyBox</title>
-      <link>http://archs.github.io/post/fullpowerTinyCore/</link>
+      <link>http://archs.github.io/blog/fullpowerTinyCore/</link>
       <pubDate>Thu, 18 Apr 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
-      <guid>http://archs.github.io/post/fullpowerTinyCore/</guid>
+      <guid>http://archs.github.io/blog/fullpowerTinyCore/</guid>
       <description>&lt;p&gt;TinyCore为了最小化体积，使用BusyBox构建基本的Shell环境，所以不是
 完全的 &lt;code&gt;GNU compatible&lt;/code&gt; ，在编译软件的时候可能造成一定的困扰。如果
 在TinyCore下面编译软件遇到问题，可注意下兼容性问题。&lt;/p&gt;
@@ -518,10 +688,10 @@ DSL中Literal Map的形式，其本身也是Go中的Literal Map。&lt;/p&gt;&lt;
     
     <item>
       <title>使用hg访问git仓库</title>
-      <link>http://archs.github.io/post/hg4git/</link>
+      <link>http://archs.github.io/blog/hg4git/</link>
       <pubDate>Thu, 11 Apr 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
-      <guid>http://archs.github.io/post/hg4git/</guid>
+      <guid>http://archs.github.io/blog/hg4git/</guid>
       <description>
 
 &lt;p&gt;hg用久了，觉得git命令很别扭，高级功能很少用到，速度差别基本上
@@ -589,10 +759,10 @@ $ hg push
     
     <item>
       <title>Embed ChickenScheme In Go</title>
-      <link>http://archs.github.io/post/goschicken/</link>
+      <link>http://archs.github.io/blog/goschicken/</link>
       <pubDate>Wed, 10 Apr 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
-      <guid>http://archs.github.io/post/goschicken/</guid>
+      <guid>http://archs.github.io/blog/goschicken/</guid>
       <description>&lt;p&gt;使用cgo加载c库的主要麻烦在于cgo不识别c头文件中的宏
 而chicken scheme初始化的时候要调用一个全局函数CHICKEN_default_toplevel。
 在cgo中使用 &lt;code&gt;void* dfp = CHICKEN_default_toplevel;&lt;/code&gt; 可以直接声明。&lt;/p&gt;
@@ -642,10 +812,10 @@ func main() {
     
     <item>
       <title>使用Markdown</title>
-      <link>http://archs.github.io/post/aboutMarkDown/</link>
+      <link>http://archs.github.io/blog/aboutMarkDown/</link>
       <pubDate>Tue, 05 Mar 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
-      <guid>http://archs.github.io/post/aboutMarkDown/</guid>
+      <guid>http://archs.github.io/blog/aboutMarkDown/</guid>
       <description>
 
 &lt;p&gt;感觉比rst简单许多，链接的使用也没有那么多的麻烦。

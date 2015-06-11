@@ -13,10 +13,10 @@
     
     <item>
       <title>DSL的模式和方法</title>
-      <link>http://archs.github.io/post/dsl/</link>
+      <link>http://archs.github.io/blog/dsl/</link>
       <pubDate>Wed, 29 May 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
-      <guid>http://archs.github.io/post/dsl/</guid>
+      <guid>http://archs.github.io/blog/dsl/</guid>
       <description>
 
 &lt;p&gt;最近研究Lisp，对Domain Specific Language很是产生了一些兴趣。&lt;/p&gt;
@@ -92,7 +92,7 @@ Literal Map都是大有帮助的语法糖，所以在面向对象和动态类型
 
 &lt;p&gt;这种方式就要借助于宿主语言的实现方式了，支持Literal Map在脚本语言里很常见，
 最近主流的静态类型语言也开始支持了，比如C#和Go。 在Go语言中这是一个很好的
-特性，下面这段代码引自 &lt;em&gt;Go语言的Windows GUI项目[Walk][]&lt;/em&gt;&lt;/p&gt;
+特性，下面这段代码引自 &lt;em&gt;Go语言的Windows GUI项目&lt;a href=&#34;https://github.com/lxn/walk/blob/master/examples/actions/actions.go&#34;&gt;Walk&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;MainWindow{
 AssignTo: &amp;amp;mw。MainWindow，
@@ -136,7 +136,7 @@ MenuItems: []MenuItem{
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;这段代码用[Walk][]的说法是 &lt;em&gt;Declarative(声明式)&lt;/em&gt; 的，但是正好使用了
+&lt;p&gt;这段代码用&lt;a href=&#34;https://github.com/lxn/walk/blob/master/examples/actions/actions.go&#34;&gt;Walk&lt;/a&gt;的说法是 &lt;em&gt;Declarative(声明式)&lt;/em&gt; 的，但是正好使用了
 DSL中Literal Map的形式，其本身也是Go中的Literal Map。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -161,17 +161,15 @@ DSL中Literal Map的形式，其本身也是Go中的Literal Map。&lt;/p&gt;&lt;
 实现。 产生式规则，看起来简单，却是一个水很深的领域，早期的人工智能和应用着重
 研究专家系统，而产生式系统是专家系统的基石。不过往简单的方面来考虑，使用决策树
 来做产生式规则还是很直观的。&lt;/p&gt;
-
-&lt;p&gt;[Walk]:&lt;a href=&#34;https://github.com/lxn/walk/blob/master/examples/actions/actions.go&#34;&gt;https://github.com/lxn/walk/blob/master/examples/actions/actions.go&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Embed ChickenScheme In Go</title>
-      <link>http://archs.github.io/post/goschicken/</link>
+      <link>http://archs.github.io/blog/goschicken/</link>
       <pubDate>Wed, 10 Apr 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
-      <guid>http://archs.github.io/post/goschicken/</guid>
+      <guid>http://archs.github.io/blog/goschicken/</guid>
       <description>&lt;p&gt;使用cgo加载c库的主要麻烦在于cgo不识别c头文件中的宏
 而chicken scheme初始化的时候要调用一个全局函数CHICKEN_default_toplevel。
 在cgo中使用 &lt;code&gt;void* dfp = CHICKEN_default_toplevel;&lt;/code&gt; 可以直接声明。&lt;/p&gt;

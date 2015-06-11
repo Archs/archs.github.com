@@ -13,10 +13,10 @@
     
     <item>
       <title>Lua画图软件</title>
-      <link>http://archs.github.io/post/lua.graph/</link>
+      <link>http://archs.github.io/blog/lua.graph/</link>
       <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
-      <guid>http://archs.github.io/post/lua.graph/</guid>
+      <guid>http://archs.github.io/blog/lua.graph/</guid>
       <description>&lt;p&gt;在网上看到一篇文章 &lt;a href=&#34;http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html&#34;&gt;用Lua画二元方程&lt;/a&gt;，很有意思。&lt;/p&gt;
 
 &lt;p&gt;作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。&lt;/p&gt;
@@ -285,10 +285,10 @@ iup.MainLoop()
     
     <item>
       <title>使用Mingw Build Lua 的注意事项</title>
-      <link>http://archs.github.io/post/mingw.build.lua/</link>
+      <link>http://archs.github.io/blog/mingw.build.lua/</link>
       <pubDate>Fri, 05 Jul 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
-      <guid>http://archs.github.io/post/mingw.build.lua/</guid>
+      <guid>http://archs.github.io/blog/mingw.build.lua/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Lua的扩展库使用LUA_LIB宏定义&lt;/p&gt;
 

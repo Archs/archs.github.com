@@ -21,54 +21,43 @@
   
   
   <link rel="stylesheet" href="http://archs.github.io/css/semantic.min.css">
-  
-
-    <link rel="stylesheet" href="http://archs.github.io/css/grids-responsive-min.css">
-
   <link rel="stylesheet" href="http://archs.github.io/css/custom.css">
 
   
   
   <link rel="stylesheet" href="http://archs.github.io/js/highlight/styles/monokai.css">
   
-  <script src="http://archs.github.io/js/highlight/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
 </head>
 <body>
 
 
 <div class="ui centered grid">
-	<div class="twelve wide column">
+	<div class="twelve wide column ui segment">
 	  
 
 
-<div class="ui secondary  menu">
+<div class="ui secondary borderless menu">
     <a class="header item" href="http://archs.github.io/">
       <i class="home big red icon"></i>
       Archs
     </a>
     <div class="ui  right  menu">
       
-        <a class="item" href="http://archs.github.io/categories/go">
-          <i class="folder icon"></i>
-          Go
-        </a>
+        
       
-        <a class="item" href="http://archs.github.io/categories/programdesign">
-          <i class="folder icon"></i>
-          Programdesign
-        </a>
+        
+          <a class="item" href="http://archs.github.io/blog">
+            <i class="folder icon"></i>
+            Blog
+          </a>
+        
       
-        <a class="item" href="http://archs.github.io/categories/tips">
-          <i class="folder icon"></i>
-          Tips
-        </a>
-      
-        <a class="item" href="http://archs.github.io/categories/utils">
-          <i class="folder icon"></i>
-          Utils
-        </a>
+        
+          <a class="item" href="http://archs.github.io/gopherjs">
+            <i class="folder icon"></i>
+            Gopherjs
+          </a>
+        
       
       <a class="item" href="http://archs.github.io/about">
          <i class="user icon"></i>
@@ -85,30 +74,45 @@
 		
 		
 		<li>
-		  <a href="http://archs.github.io/post/hg4git/">使用hg访问git仓库</a>
+		  <h1 class="ui header">
+	<a href="http://archs.github.io/blog/hg4git/">使用hg访问git仓库</a>
+</h1>	
+<footer class="footnote">
+	submitted <time datetime="2013-04-11T00:00:00Z" class="post-list timeago">2013-04-11T00:00:00Z</time>
 
-		  <p class="footnote">
-			submitted <time datetime="2013-04-11T00:00:00Z" class="post-list timeago">2013-04-11T00:00:00Z</time>
+	
 
-			
-			to
-			
 
-			
-			tags:[ <a href="http://archs.github.io/tags/hg">hg</a> <a href="http://archs.github.io/tags/git">git</a> <a href="http://archs.github.io/tags/python">python</a> ]
-			
+	to
 
-			
-			categories:[ <a href="http://archs.github.io/categories/tips">tips</a> ]
-			
 
+
+	tags:[ 
+		
+			<a href="http://archs.github.io/tags/hg">hg</a> 
+		
+			<a href="http://archs.github.io/tags/git">git</a> 
+		
+			<a href="http://archs.github.io/tags/python">python</a> 
+		
+	]
+
+
+
+	categories:[ 
 			
-		  </p>
+				<a href="http://archs.github.io/categories/tips">tips</a> 
+			
+		]
+
+
+
+</footer>
 		  <div>
 	<p>hg用久了，觉得git命令很别扭，高级功能很少用到，速度差别基本上
 感觉不出来，哈，所以还是hg喽. 唯一的问题就在于Github，它不支持hg。
 好在hg有一个hggit的扩展，有一次感叹一下python的“batter included”！</p>
- <a href="http://archs.github.io/post/hg4git/"> Read more → </a>
+ <a href="http://archs.github.io/blog/hg4git/"> Read more → </a>
 </div>
 		</li>
 		
@@ -116,6 +120,12 @@
 	</div>
 </div>
 
+
+<div class="ui centered grid">
+    <div class="twelve wide column ui basic segment">
+    © 2013-15 Archs. All rights reserved; Powered by <a href="http://gohugo.io/">Hugo</a> . Hosted by <a href="http://github.com" title="Github">Github</a> .
+    </div>
+</div>
 
 
 
@@ -126,6 +136,9 @@
     $("time.timeago").timeago();
   })
 </script>
+<script src="http://archs.github.io/js/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 
 
 </body>

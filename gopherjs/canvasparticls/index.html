@@ -1,0 +1,297 @@
+<html lang="en">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>Canvas Particles Using Gopherjs</title>
+  <meta name="description" content="Canvas Particles Using Gopherjs">
+  <meta name="author" content="Archs">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://archs.github.io/css/semantic.min.css">
+  <link rel="stylesheet" href="http://archs.github.io/css/custom.css">
+
+  
+  
+  <link rel="stylesheet" href="http://archs.github.io/js/highlight/styles/monokai.css">
+  
+</head>
+<body>
+
+
+<div class="ui centered grid">
+    <div class="twelve wide column ui segment">
+      
+
+
+<div class="ui secondary borderless menu">
+    <a class="header item" href="http://archs.github.io/">
+      <i class="home big red icon"></i>
+      Archs
+    </a>
+    <div class="ui  right  menu">
+      
+        
+      
+        
+          <a class="item" href="http://archs.github.io/blog">
+            <i class="folder icon"></i>
+            Blog
+          </a>
+        
+      
+        
+          <a class="item" href="http://archs.github.io/gopherjs">
+            <i class="folder icon"></i>
+            Gopherjs
+          </a>
+        
+      
+      <a class="item" href="http://archs.github.io/about">
+         <i class="user icon"></i>
+        About
+      </a>
+      <a class="item" href="">
+        <i class="rss square yellow large icon"></i>RSS
+      </a>
+    </div>
+</div>
+        <div class="post">
+            <div class="post-title">
+                <h1>Canvas Particles Using Gopherjs</h1>
+                <div id="gopherjs">
+                </div>
+                <p>使用 <em>Gopherjs</em> 模拟的简单粒子系统，例子的来源是 <a href="http://soulwire.github.io/sketch.js/examples/particles.html">sketch.js</a>.</p>
+
+<p>在不熟悉Javascript的情况下使用Gopherjs写HTML5应用，还是很有爽的！大部分的Golang绝大部分
+基本库（除了os和syscall的部分功能）在Gopherjs中是直接可用的，见<a href="https://github.com/gopherjs/gopherjs/blob/master/doc/packages.md">兼容性列表</a>。</p>
+
+<p><code>Golang</code>的类型系统比<code>Javascript</code>直观的多，而且代码结构也要清爽许多。 :)</p>
+
+<p>但是也有些需要注意的问题：</p>
+
+<ol>
+<li><code>Javascript</code>是弱类型的，所以和<code>JS</code>交互的时候，数字类型需要注意</li>
+
+<li><p>interface目前在<code>Gopherjs</code>与<code>JS</code>的交互中支持的不是很好</p>
+
+<p>如果interface类型在<code>JS</code>（一般来讲是js的各种库）和<code>Gopherjs</code>之间传递，结果往往出于预料之外。
+但是在不和<code>JS</code>交互的代码中使用是没有问题的。</p></li>
+
+<li><p><code>Gopherjs</code>生成的代码尺寸比较大</p>
+
+<p>如果对js文件的大小没什么严苛的需求，做做Demo和演示，在Web中使用 <em>Gopherjs</em></p></li>
+</ol>
+
+<pre><code class="language-Go">package main
+
+import (
+    &quot;github.com/Archs/js/canvas&quot;
+    &quot;github.com/Archs/js/dom&quot;
+    &quot;github.com/Archs/js/raf&quot;
+    &quot;math&quot;
+    &quot;math/rand&quot;
+    &quot;strconv&quot;
+)
+
+const (
+    MAX_PARTICLES = 280
+)
+
+var (
+    COLOURS = []string{&quot;#69D2E7&quot;, &quot;#A7DBD8&quot;, &quot;#E0E4CC&quot;, &quot;#F38630&quot;, &quot;#FA6900&quot;, &quot;#FF4E50&quot;, &quot;#F9D423&quot;}
+    ctx     *canvas.Context2D
+    cw, ch  float64
+    counter = 0
+    ps      = []*Particle{}
+    pool    = []*Particle{}
+)
+
+type Particle struct {
+    *canvas.Context2D
+    x, y    float64
+    vx, vy  float64
+    radius  float64
+    theta   float64
+    force   float64
+    damping float64
+    color   string
+}
+
+func getParticle(x, y float64) *Particle {
+    var p *Particle
+    if len(ps) &gt;= MAX_PARTICLES {
+        pool = append(pool, ps[0])
+        ps = ps[1:]
+    }
+    if len(pool) &gt; 0 {
+        p = pool[0]
+        pool = pool[1:]
+    } else {
+        p = &amp;Particle{
+            Context2D: ctx,
+        }
+    }
+    p.init(x, y)
+    return p
+}
+
+func (p *Particle) init(x, y float64) {
+    p.x = x
+    p.y = y
+    p.radius = 5 + 35*rand.Float64()
+    p.theta = 2 * math.Pi * rand.Float64()
+    p.force = 2 + 8*rand.Float64()
+    p.damping = 0.9 + 0.1*rand.Float64()
+    p.color = COLOURS[rand.Intn(7)]
+    p.vx = p.force * math.Sin(p.theta)
+    p.vy = p.force * math.Cos(p.theta)
+}
+
+func (p *Particle) isAlive() bool {
+    return p.radius &gt; 0.5
+}
+
+func (g *Particle) update() {
+    // update
+    g.radius *= 0.93
+    g.x += g.vx
+    g.y += g.vy
+    // g.theta += (0.5 - rand.Float64()) * 0.15
+    g.vx *= g.damping
+    g.vy *= g.damping
+    g.vx += (math.Sin(g.theta) * 0.1)
+    g.vy += (math.Cos(g.theta) * 0.1)
+    // g.vx += (rand.Float64() * 0.1)
+    // g.vy += (rand.Float64() * 0.1)
+}
+
+func (g *Particle) draw(t float64) {
+    // for canvas
+    g.BeginPath()
+    g.Arc(g.x, g.y, g.radius, 0, math.Pi*2, true)
+    g.FillStyle = g.color
+    g.Fill()
+}
+
+func run(t float64) {
+    raf.RequestAnimationFrame(run)
+    counter += 1
+    // frame control
+    if counter%2 == 0 {
+        return
+    }
+    // update &amp; draw all the particles
+    ctx.ClearRect(0, 0, cw, ch)
+    for i := len(ps) - 1; i &gt;= 0; i-- {
+        p := ps[i]
+        p.update()
+        if !p.isAlive() {
+            ps = append(ps[:i], ps[i+1:]...)
+        } else {
+            p.draw(t)
+        }
+    }
+}
+
+func makeParticles(x, y float64, n int) {
+    for i := 0; i &lt; rand.Intn(n); i++ {
+        p := getParticle(x, y)
+        ps = append(ps, p)
+    }
+}
+
+func main() {
+    dom.OnDOMContentLoaded(func() {
+        s := dom.GetElementById(&quot;gopherjs&quot;)
+        style := dom.GetComputedStyle(s)
+
+        el := canvas.New(dom.CreateElement(&quot;canvas&quot;).Object)
+        cw, _ = strconv.ParseFloat(style.GetPropertyValue(&quot;width&quot;)[:3], 64)
+        ch, _ = strconv.ParseFloat(style.GetPropertyValue(&quot;height&quot;)[:3], 64)
+        el.Width = int(cw)
+        el.Height = int(ch)
+        el.AddEventListener(dom.EvtMousemove, func(e *dom.Event) {
+            e.PreventDefault()
+            x := float64(e.LayerX)
+            y := float64(e.LayerY)
+            makeParticles(x, y, 5)
+        })
+        ctx = el.GetContext2D()
+        ctx.GlobalCompositeOperation = canvas.CompositeLighter
+        s.AppendChild(el.Element)
+        raf.RequestAnimationFrame(run)
+    })
+}
+</code></pre>
+
+            </div>
+
+            <div class="post-content">
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'archs';
+    var disqus_identifier = 'http:\/\/archs.github.io\/gopherjs\/canvasparticls\/';
+    var disqus_title = 'Canvas Particles Using Gopherjs';
+    var disqus_url = 'http:\/\/archs.github.io\/gopherjs\/canvasparticls\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+        </div>
+	</div>
+</div>
+
+<style type="text/css" media="screen">
+    #gopherjs {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+    }
+</style>
+
+<script 
+    src="http://archs.github.io/js/gopherjs/canvas.particls/main.js" type="text/javascript" charset="utf-8">
+</script>
+
+
+<div class="ui centered grid">
+    <div class="twelve wide column ui basic segment">
+    © 2013-15 Archs. All rights reserved; Powered by <a href="http://gohugo.io/">Hugo</a> . Hosted by <a href="http://github.com" title="Github">Github</a> .
+    </div>
+</div>
+
+
+
+<script src="http://archs.github.io/js/jquery.min.js" type="text/javascript"></script>
+<script src="http://archs.github.io/js/jquery.timeago.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+    $("time.timeago").timeago();
+  })
+</script>
+<script src="http://archs.github.io/js/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

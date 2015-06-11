@@ -3,42 +3,47 @@
   
   <url>
     <loc>http://archs.github.io/</loc>
-    <lastmod>2013-07-15T00:00:00+00:00</lastmod>
+    <lastmod>2015-06-11T16:51:59+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://archs.github.io/post/lua.graph/</loc>
+    <loc>http://archs.github.io/gopherjs/canvasparticls/</loc>
+    <lastmod>2015-06-11T16:51:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://archs.github.io/blog/lua.graph/</loc>
     <lastmod>2013-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://archs.github.io/post/git-amend/</loc>
+    <loc>http://archs.github.io/blog/git-amend/</loc>
     <lastmod>2013-07-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://archs.github.io/post/mingw.build.lua/</loc>
+    <loc>http://archs.github.io/blog/mingw.build.lua/</loc>
     <lastmod>2013-07-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://archs.github.io/post/dsl/</loc>
+    <loc>http://archs.github.io/blog/dsl/</loc>
     <lastmod>2013-05-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://archs.github.io/post/fullpowerTinyCore/</loc>
+    <loc>http://archs.github.io/blog/fullpowerTinyCore/</loc>
     <lastmod>2013-04-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://archs.github.io/post/hg4git/</loc>
+    <loc>http://archs.github.io/blog/hg4git/</loc>
     <lastmod>2013-04-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://archs.github.io/post/goschicken/</loc>
+    <loc>http://archs.github.io/blog/goschicken/</loc>
     <lastmod>2013-04-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -48,7 +53,7 @@
   </url>
   
   <url>
-    <loc>http://archs.github.io/post/aboutMarkDown/</loc>
+    <loc>http://archs.github.io/blog/aboutMarkDown/</loc>
     <lastmod>2013-03-05T00:00:00+00:00</lastmod>
   </url>
   

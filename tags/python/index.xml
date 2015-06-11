@@ -13,10 +13,10 @@
     
     <item>
       <title>使用hg访问git仓库</title>
-      <link>http://archs.github.io/post/hg4git/</link>
+      <link>http://archs.github.io/blog/hg4git/</link>
       <pubDate>Thu, 11 Apr 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
-      <guid>http://archs.github.io/post/hg4git/</guid>
+      <guid>http://archs.github.io/blog/hg4git/</guid>
       <description>
 
 &lt;p&gt;hg用久了，觉得git命令很别扭，高级功能很少用到，速度差别基本上

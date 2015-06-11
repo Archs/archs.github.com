@@ -21,54 +21,43 @@
   
   
   <link rel="stylesheet" href="http://archs.github.io/css/semantic.min.css">
-  
-
-    <link rel="stylesheet" href="http://archs.github.io/css/grids-responsive-min.css">
-
   <link rel="stylesheet" href="http://archs.github.io/css/custom.css">
 
   
   
   <link rel="stylesheet" href="http://archs.github.io/js/highlight/styles/monokai.css">
   
-  <script src="http://archs.github.io/js/highlight/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
 </head>
 <body>
 
 
 <div class="ui centered grid">
-	<div class="twelve wide column">
+	<div class="twelve wide column ui segment">
 	  
 
 
-<div class="ui secondary  menu">
+<div class="ui secondary borderless menu">
     <a class="header item" href="http://archs.github.io/">
       <i class="home big red icon"></i>
       Archs
     </a>
     <div class="ui  right  menu">
       
-        <a class="item" href="http://archs.github.io/categories/go">
-          <i class="folder icon"></i>
-          Go
-        </a>
+        
       
-        <a class="item" href="http://archs.github.io/categories/programdesign">
-          <i class="folder icon"></i>
-          Programdesign
-        </a>
+        
+          <a class="item" href="http://archs.github.io/blog">
+            <i class="folder icon"></i>
+            Blog
+          </a>
+        
       
-        <a class="item" href="http://archs.github.io/categories/tips">
-          <i class="folder icon"></i>
-          Tips
-        </a>
-      
-        <a class="item" href="http://archs.github.io/categories/utils">
-          <i class="folder icon"></i>
-          Utils
-        </a>
+        
+          <a class="item" href="http://archs.github.io/gopherjs">
+            <i class="folder icon"></i>
+            Gopherjs
+          </a>
+        
       
       <a class="item" href="http://archs.github.io/about">
          <i class="user icon"></i>
@@ -85,30 +74,43 @@
 		
 		
 		<li>
-		  <a href="http://archs.github.io/post/fullpowerTinyCore/">在TinyCore中取代BusyBox</a>
+		  <h1 class="ui header">
+	<a href="http://archs.github.io/blog/fullpowerTinyCore/">在TinyCore中取代BusyBox</a>
+</h1>	
+<footer class="footnote">
+	submitted <time datetime="2013-04-18T00:00:00Z" class="post-list timeago">2013-04-18T00:00:00Z</time>
 
-		  <p class="footnote">
-			submitted <time datetime="2013-04-18T00:00:00Z" class="post-list timeago">2013-04-18T00:00:00Z</time>
+	
 
-			
-			to
-			
 
-			
-			tags:[ <a href="http://archs.github.io/tags/tinycore">TinyCore</a> <a href="http://archs.github.io/tags/linux">Linux</a> ]
-			
+	to
 
-			
-			categories:[ <a href="http://archs.github.io/categories/tips">tips</a> ]
-			
 
+
+	tags:[ 
+		
+			<a href="http://archs.github.io/tags/tinycore">TinyCore</a> 
+		
+			<a href="http://archs.github.io/tags/linux">Linux</a> 
+		
+	]
+
+
+
+	categories:[ 
 			
-		  </p>
+				<a href="http://archs.github.io/categories/tips">tips</a> 
+			
+		]
+
+
+
+</footer>
 		  <div>
 	<p>TinyCore为了最小化体积，使用BusyBox构建基本的Shell环境，所以不是
 完全的 <code>GNU compatible</code> ，在编译软件的时候可能造成一定的困扰。如果
 在TinyCore下面编译软件遇到问题，可注意下兼容性问题。</p>
- <a href="http://archs.github.io/post/fullpowerTinyCore/"> Read more → </a>
+ <a href="http://archs.github.io/blog/fullpowerTinyCore/"> Read more → </a>
 </div>
 		</li>
 		
@@ -116,6 +118,12 @@
 	</div>
 </div>
 
+
+<div class="ui centered grid">
+    <div class="twelve wide column ui basic segment">
+    © 2013-15 Archs. All rights reserved; Powered by <a href="http://gohugo.io/">Hugo</a> . Hosted by <a href="http://github.com" title="Github">Github</a> .
+    </div>
+</div>
 
 
 
@@ -126,6 +134,9 @@
     $("time.timeago").timeago();
   })
 </script>
+<script src="http://archs.github.io/js/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 
 
 </body>

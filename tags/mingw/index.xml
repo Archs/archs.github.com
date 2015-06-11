@@ -13,10 +13,10 @@
     
     <item>
       <title>使用Mingw Build Lua 的注意事项</title>
-      <link>http://archs.github.io/post/mingw.build.lua/</link>
+      <link>http://archs.github.io/blog/mingw.build.lua/</link>
       <pubDate>Fri, 05 Jul 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
-      <guid>http://archs.github.io/post/mingw.build.lua/</guid>
+      <guid>http://archs.github.io/blog/mingw.build.lua/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Lua的扩展库使用LUA_LIB宏定义&lt;/p&gt;
 
