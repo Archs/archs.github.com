@@ -32,16 +32,16 @@
 
 
 <div class="ui centered grid">
-	<div class="twelve wide column ui segment">
+	<div class="twelve wide column ui basic segment">
 	  
 
 
 <div class="ui secondary borderless menu">
     <a class="header item" href="http://archs.github.io/">
-      <i class="home big red icon"></i>
-      Archs
+      
+      <h1>Archs</h1>
     </a>
-    <div class="ui  right  menu">
+    <div class="ui  right text  menu">
       
         
       
@@ -64,73 +64,50 @@
         About
       </a>
       <a class="item" href="http://archs.github.io/gopherjs/index.xml">
-        <i class="rss square yellow large icon"></i>RSS
+        <i class="rss square red big icon"></i>
       </a>
     </div>
 </div>
-	  <p class="posts-name">Gopherjs:</p>
+
+<div class="ui divider"></div>
+
+	  
 
 	  <ul class="posts">
 		
 		
 		<li>
-		  <h1 class="ui header">
-	<a href="http://archs.github.io/gopherjs/canvasparticls/">Canvas Particles Using Gopherjs</a>
-</h1>	
-<footer class="footnote">
-	submitted <time datetime="2015-06-11T16:51:59&#43;08:00" class="post-list timeago">2015-06-11T16:51:59&#43;08:00</time>
-
+		  <footer class="footnote">
+	<time datetime="2015-06-11T16:51:59&#43;08:00" class="post-list timeago">2015-06-11T16:51:59&#43;08:00</time>
 	
 
 
-	to
-
-
-
-	tags:[ 
+	| tags:
 		
 			<a href="http://archs.github.io/tags/gopherjs">Gopherjs</a> 
 		
 			<a href="http://archs.github.io/tags/golang">golang</a> 
 		
-	]
 
 
 
-	categories:[ 
+	| categories:
 			
 				<a href="http://archs.github.io/categories/development">Development</a> 
 			
 				<a href="http://archs.github.io/categories/golang">GoLang</a> 
 			
-		]
 
 
 
 </footer>
+<h1 class="ui header">
+    <a href="http://archs.github.io/gopherjs/canvasparticls/">Canvas Particles Using Gopherjs</a>
+</h1>   
+
 		  <div>
 	<p>使用 <em>Gopherjs</em> 模拟的简单粒子系统，例子的来源是 <a href="http://soulwire.github.io/sketch.js/examples/particles.html">sketch.js</a>.</p>
 
-<p>在不熟悉Javascript的情况下使用Gopherjs写HTML5应用，还是很有爽的！大部分的Golang绝大部分
-基本库（除了os和syscall的部分功能）在Gopherjs中是直接可用的，见<a href="https://github.com/gopherjs/gopherjs/blob/master/doc/packages.md">兼容性列表</a>。</p>
-
-<p><code>Golang</code>的类型系统比<code>Javascript</code>直观的多，而且代码结构也要清爽许多。 :)</p>
-
-<p>但是也有些需要注意的问题：</p>
-
-<ol>
-<li><code>Javascript</code>是弱类型的，所以和<code>JS</code>交互的时候，数字类型需要注意</li>
-
-<li><p>interface目前在<code>Gopherjs</code>与<code>JS</code>的交互中支持的不是很好</p>
-
-<p>如果interface类型在<code>JS</code>（一般来讲是js的各种库）和<code>Gopherjs</code>之间传递，结果往往出于预料之外。
-但是在不和<code>JS</code>交互的代码中使用是没有问题的。</p></li>
-
-<li><p><code>Gopherjs</code>生成的代码尺寸比较大</p>
-
-<p>如果对js文件的大小没什么严苛的需求，做做Demo和演示，在Web中使用 <em>Gopherjs</em></p></li>
-</ol>
- <a href="http://archs.github.io/gopherjs/canvasparticls/"> Read more → </a>
 </div>
 		</li>
 		

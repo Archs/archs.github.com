@@ -32,16 +32,16 @@
 
 
 <div class="ui centered grid">
-	<div class="twelve wide column ui segment">
+	<div class="twelve wide column ui basic segment">
 	  
 
 
 <div class="ui secondary borderless menu">
     <a class="header item" href="http://archs.github.io/">
-      <i class="home big red icon"></i>
-      Archs
+      
+      <h1>Archs</h1>
     </a>
-    <div class="ui  right  menu">
+    <div class="ui  right text  menu">
       
         
       
@@ -64,30 +64,25 @@
         About
       </a>
       <a class="item" href="http://archs.github.io/tags/lua/index.xml">
-        <i class="rss square yellow large icon"></i>RSS
+        <i class="rss square red big icon"></i>
       </a>
     </div>
 </div>
-	  <p class="posts-name">Lua:</p>
+
+<div class="ui divider"></div>
+
+	  
 
 	  <ul class="posts">
 		
 		
 		<li>
-		  <h1 class="ui header">
-	<a href="http://archs.github.io/blog/lua.graph/">Lua画图软件</a>
-</h1>	
-<footer class="footnote">
-	submitted <time datetime="2013-07-15T00:00:00Z" class="post-list timeago">2013-07-15T00:00:00Z</time>
-
+		  <footer class="footnote">
+	<time datetime="2013-07-15T00:00:00Z" class="post-list timeago">2013-07-15T00:00:00Z</time>
 	
 
 
-	to
-
-
-
-	tags:[ 
+	| tags:
 		
 			<a href="http://archs.github.io/tags/lua">Lua</a> 
 		
@@ -95,38 +90,29 @@
 		
 			<a href="http://archs.github.io/tags/script">script</a> 
 		
-	]
 
 
 
 
 
 </footer>
+<h1 class="ui header">
+    <a href="http://archs.github.io/blog/lua.graph/">Lua画图软件</a>
+</h1>   
+
 		  <div>
-	<p>在网上看到一篇文章 <a href="http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html">用Lua画二元方程</a>，很有意思。</p>
+	<p>在网上看到一篇文章 <a href="http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html">用Lua画二元方程</a>，很有意思。 作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。</p>
 
-<p>作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。</p>
-
-<p>这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序:</p>
- <a href="http://archs.github.io/blog/lua.graph/"> Read more → </a>
 </div>
 		</li>
 		
 		<li>
-		  <h1 class="ui header">
-	<a href="http://archs.github.io/blog/mingw.build.lua/">使用Mingw Build Lua 的注意事项</a>
-</h1>	
-<footer class="footnote">
-	submitted <time datetime="2013-07-05T00:00:00Z" class="post-list timeago">2013-07-05T00:00:00Z</time>
-
+		  <footer class="footnote">
+	<time datetime="2013-07-05T00:00:00Z" class="post-list timeago">2013-07-05T00:00:00Z</time>
 	
 
 
-	to
-
-
-
-	tags:[ 
+	| tags:
 		
 			<a href="http://archs.github.io/tags/lua">Lua</a> 
 		
@@ -134,21 +120,23 @@
 		
 			<a href="http://archs.github.io/tags/gcc">gcc</a> 
 		
-	]
 
 
 
-	categories:[ 
+	| categories:
 			
 				<a href="http://archs.github.io/categories/tips">tips</a> 
 			
-		]
 
 
 
 </footer>
+<h1 class="ui header">
+    <a href="http://archs.github.io/blog/mingw.build.lua/">使用Mingw Build Lua 的注意事项</a>
+</h1>   
+
 		  <div>
-	Lua的扩展库使用LUA_LIB宏定义 在c文件中引入lua的头文件之前加入： #define LUA_LIB 使用windows库的时候，需要在gcc命令行中引入库的顺序 这样 gcc -lwsock32 ws_c_file.c 可能会造成winsock函数未定义应用的问题，最好使用 gcc ws_c_file.c -lwsock32 这个问题相当诡异，简直不知道怎么说是好。 <a href="http://archs.github.io/blog/mingw.build.lua/"> Read more → </a>
+	Lua的扩展库使用LUA_LIB宏定义 在c文件中引入lua的头文件之前加入： #define LUA_LIB 使用windows库的时候，需要在gcc命令行中引入库的顺序 这样 gcc -lwsock32 ws_c_file.c 可能会造成winsock函数未定义应用的问题，最好使用 gcc ws_c_file.c -lwsock32 这个问题相当诡异，简直不知道怎么说是好。
 </div>
 		</li>
 		

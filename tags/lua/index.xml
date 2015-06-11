@@ -17,9 +17,7 @@
       <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
       <author>archs@archs.tk (Archs)</author>
       <guid>http://archs.github.io/blog/lua.graph/</guid>
-      <description>&lt;p&gt;在网上看到一篇文章 &lt;a href=&#34;http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html&#34;&gt;用Lua画二元方程&lt;/a&gt;，很有意思。&lt;/p&gt;
-
-&lt;p&gt;作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。&lt;/p&gt;
+      <description>&lt;p&gt;在网上看到一篇文章 &lt;a href=&#34;http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html&#34;&gt;用Lua画二元方程&lt;/a&gt;，很有意思。 作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。&lt;/p&gt;
 
 &lt;p&gt;这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序:
 &lt;a href=&#34;http://archs.github.io/assets/media/graph.exe&#34;&gt;下载链接&lt;/a&gt;&lt;/p&gt;

@@ -32,16 +32,16 @@
 
 
 <div class="ui centered grid">
-	<div class="twelve wide column ui segment">
+	<div class="twelve wide column ui basic segment">
 	  
 
 
 <div class="ui secondary borderless menu">
     <a class="header item" href="http://archs.github.io/">
-      <i class="home big red icon"></i>
-      Archs
+      
+      <h1>Archs</h1>
     </a>
-    <div class="ui  right  menu">
+    <div class="ui  right text  menu">
       
         
       
@@ -64,30 +64,25 @@
         About
       </a>
       <a class="item" href="http://archs.github.io/tags/cgo/index.xml">
-        <i class="rss square yellow large icon"></i>RSS
+        <i class="rss square red big icon"></i>
       </a>
     </div>
 </div>
-	  <p class="posts-name">Cgo:</p>
+
+<div class="ui divider"></div>
+
+	  
 
 	  <ul class="posts">
 		
 		
 		<li>
-		  <h1 class="ui header">
-	<a href="http://archs.github.io/blog/goschicken/">Embed ChickenScheme In Go</a>
-</h1>	
-<footer class="footnote">
-	submitted <time datetime="2013-04-10T00:00:00Z" class="post-list timeago">2013-04-10T00:00:00Z</time>
-
+		  <footer class="footnote">
+	<time datetime="2013-04-10T00:00:00Z" class="post-list timeago">2013-04-10T00:00:00Z</time>
 	
 
 
-	to
-
-
-
-	tags:[ 
+	| tags:
 		
 			<a href="http://archs.github.io/tags/scheme">scheme</a> 
 		
@@ -97,24 +92,26 @@
 		
 			<a href="http://archs.github.io/tags/go">go</a> 
 		
-	]
 
 
 
-	categories:[ 
+	| categories:
 			
 				<a href="http://archs.github.io/categories/go">go</a> 
 			
-		]
 
 
 
 </footer>
+<h1 class="ui header">
+    <a href="http://archs.github.io/blog/goschicken/">Embed ChickenScheme In Go</a>
+</h1>   
+
 		  <div>
 	<p>使用cgo加载c库的主要麻烦在于cgo不识别c头文件中的宏
 而chicken scheme初始化的时候要调用一个全局函数CHICKEN_default_toplevel。
 在cgo中使用 <code>void* dfp = CHICKEN_default_toplevel;</code> 可以直接声明。</p>
- <a href="http://archs.github.io/blog/goschicken/"> Read more → </a>
+
 </div>
 		</li>
 		

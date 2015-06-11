@@ -19,9 +19,8 @@
       <guid>http://archs.github.io/blog/dsl/</guid>
       <description>
 
-&lt;p&gt;最近研究Lisp，对Domain Specific Language很是产生了一些兴趣。&lt;/p&gt;
-
-&lt;p&gt;James Gosling曾经说过： &lt;code&gt;每个配置文件最终都会变成一门编程语言。&lt;/code&gt; 这大概是
+&lt;p&gt;最近研究Lisp，对Domain Specific Language很是产生了一些兴趣。
+James Gosling曾经说过： &lt;code&gt;每个配置文件最终都会变成一门编程语言。&lt;/code&gt; 这大概是
 DSL之所以兴起和引人关注的一点吧。另外Martin Fowler在&lt;a href=&#34;http://book.douban.com/subject/21964984/&#34;&gt;《领域特定语言》&lt;/a&gt;中
 强调了与领域专家的沟通作为DSL的一个主要优点和设计出发点。&lt;/p&gt;
 
